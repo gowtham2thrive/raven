@@ -5,7 +5,7 @@
  * Base URL configurable via environment.
  */
 
-const API_BASE = 'http://localhost:8000';
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
 export function notifyDataChanged() {
   if (typeof window !== 'undefined') {
