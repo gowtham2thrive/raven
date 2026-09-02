@@ -66,9 +66,7 @@ export function DisputeTable({
   const tabCounts = useMemo(() => {
     return {
       all: cases.length,
-      needs_review: cases.filter(c => 
-        c.status === 'under_review' || c.recommendation === 'human_review'
-      ).length,
+      needs_review: cases.filter(c => c.status === 'under_review').length,
       auto_contest: cases.filter(c => 
         (c.status === 'assessed' || c.status === 'draft_ready' || c.status === 'approved') && 
         c.recommendation === 'contest'
@@ -113,7 +111,7 @@ export function DisputeTable({
 
       // Filter matching — aligned with tabCounts logic
       if (filter === 'all') return true;
-      if (filter === 'needs_review') return c.status === 'under_review' || c.recommendation === 'human_review';
+      if (filter === 'needs_review') return c.status === 'under_review';
       if (filter === 'auto_contest') return (c.status === 'assessed' || c.status === 'draft_ready' || c.status === 'approved') && c.recommendation === 'contest';
       if (filter === 'unprocessed') return c.status === 'created';
       if (filter === 'urgent') return formatDeadline(c.respond_by).type === 'urgent';
@@ -772,8 +770,8 @@ export function DisputeTable({
                               </button>
                             )}
 
-                            {/* Case in under_review, draft_ready, or approved -> 1-Click Approve / Loss */}
-                            {(c.status === 'under_review' || c.status === 'draft_ready' || c.status === 'approved') && onQuickAction && (
+                            {/* Case in assessed, under_review, or draft_ready -> Approve / Loss */}
+                            {(c.status === 'assessed' || c.status === 'under_review' || c.status === 'draft_ready') && onQuickAction && (
                               <>
                                 <button
                                   type="button"
@@ -782,10 +780,10 @@ export function DisputeTable({
                                     e.stopPropagation();
                                     onQuickAction(c.case_id, 'approve');
                                   }}
-                                  title={c.status === 'approved' ? "Submit Contest to Razorpay" : "Approve & Submit Defense"}
+                                  title="Approve & Submit Defense"
                                 >
-                                  {c.status === 'approved' ? <IconSend size={11} /> : <IconCheck size={11} />}
-                                  <span>{c.status === 'approved' ? 'Submit' : 'Approve'}</span>
+                                  <IconCheck size={11} />
+                                  <span>Approve</span>
                                 </button>
 
                                 <button
@@ -801,6 +799,22 @@ export function DisputeTable({
                                   <span>Loss</span>
                                 </button>
                               </>
+                            )}
+
+                            {/* Case already approved -> Submit only (cannot reject after approval) */}
+                            {c.status === 'approved' && onQuickAction && (
+                              <button
+                                type="button"
+                                className="btn-row btn-row-approve"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  onQuickAction(c.case_id, 'approve');
+                                }}
+                                title="Submit Contest to Razorpay"
+                              >
+                                <IconSend size={11} />
+                                <span>Submit</span>
+                              </button>
                             )}
 
                             {/* Inspect Drawer Button */}
@@ -913,15 +927,15 @@ export function DisputeTable({
                         </button>
                       )}
 
-                      {(c.status === 'under_review' || c.status === 'draft_ready' || c.status === 'approved') && onQuickAction && (
+                      {(c.status === 'assessed' || c.status === 'under_review' || c.status === 'draft_ready') && onQuickAction && (
                         <>
                           <button
                             type="button"
                             className="btn btn-sm btn-success"
                             onClick={() => onQuickAction(c.case_id, 'approve')}
                           >
-                            {c.status === 'approved' ? <IconSend size={13} /> : <IconCheck size={13} />}
-                            <span>{c.status === 'approved' ? 'Submit' : 'Approve'}</span>
+                            <IconCheck size={13} />
+                            <span>Approve</span>
                           </button>
 
                           <button
@@ -933,6 +947,18 @@ export function DisputeTable({
                             <span>Loss</span>
                           </button>
                         </>
+                      )}
+
+                      {/* Approved -> Submit only */}
+                      {c.status === 'approved' && onQuickAction && (
+                        <button
+                          type="button"
+                          className="btn btn-sm btn-success"
+                          onClick={() => onQuickAction(c.case_id, 'approve')}
+                        >
+                          <IconSend size={13} />
+                          <span>Submit</span>
+                        </button>
                       )}
 
                       <button
