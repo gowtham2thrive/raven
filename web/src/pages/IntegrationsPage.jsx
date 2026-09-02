@@ -300,7 +300,7 @@ export function IntegrationsPage() {
         <div className="integration-error-banner">
           <IconAlertTriangle size={18} className="error-icon" />
           <div>
-            <strong>Unable to connect to server:</strong> {error}. Ensure backend is active on port 8000.
+            <strong>Unable to connect to server:</strong> {error}. Ensure the backend is running and accessible.
           </div>
         </div>
       )}
