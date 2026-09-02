@@ -11,6 +11,7 @@ receives Razorpay webhooks and exposes REST endpoints.
 from __future__ import annotations
 
 import logging
+import os
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
@@ -56,17 +57,21 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
-# CORS — allow frontend dev servers
+# CORS — allow frontend origins (configurable via env)
+_default_origins = [
+    "http://localhost:5173",   # Vite dev server
+    "http://localhost:5174",   # Vite fallback port
+    "http://localhost:3000",   # Next.js dev server
+    "http://127.0.0.1:5173",
+    "http://127.0.0.1:5174",
+    "http://127.0.0.1:3000",
+]
+_env_origins = os.environ.get("RAVEN_CORS_ORIGINS", "")
+_extra_origins = [o.strip() for o in _env_origins.split(",") if o.strip()] if _env_origins else []
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",   # Vite dev server
-        "http://localhost:5174",   # Vite fallback port
-        "http://localhost:3000",   # Next.js dev server
-        "http://127.0.0.1:5173",
-        "http://127.0.0.1:5174",
-        "http://127.0.0.1:3000",
-    ],
+    allow_origins=_default_origins + _extra_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
