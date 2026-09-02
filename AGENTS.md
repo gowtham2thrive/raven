@@ -222,9 +222,21 @@ RAVEN's authority must be explicit and layered:
 - **Analyze**: classify, correlate, score, identify conflicts.
 - **Draft**: prepare an explanation and evidence package.
 - **Recommend**: suggest an action with supporting evidence.
-- **Execute**: only with explicit, scoped human authorization.
+- **Execute**: submit to payment gateway. Requires either explicit human approval OR satisfaction of all auto-pilot guardrail criteria.
 
 The higher the consequence, the stronger the authorization requirement.
+
+### Auto-pilot guardrails
+
+Autonomous submission is authorized when **all** of the following are true:
+
+1. Auto-contest is explicitly enabled in system settings.
+2. The recommendation is "contest" with auto-submit eligibility (no contradictions, no missing required evidence, no unverified evidence).
+3. The confidence score meets or exceeds the configured minimum threshold.
+4. The dispute amount does not exceed the configured maximum.
+5. The dispute amount is below the mandatory human review threshold.
+
+If any criterion fails, the case routes to human review. The audit trail records every auto-submission with the guardrail values that authorized it.
 
 ### State management
 

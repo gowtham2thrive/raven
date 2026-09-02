@@ -244,14 +244,22 @@ class CaseService:
             if ev.status.value == "available"
         ]
 
-        # Update status based on assessment
-        # Per AGENTS.md Section 10: "Humans authorize consequential actions."
-        # All investigated cases route to human review. The UI provides
-        # a single "Approve" action that chains review + submit in one click.
-        # The auto_submit_eligible flag is preserved in the assessment data
-        # for display (e.g., showing "Contest Ready" badge).
+        # Update status based on assessment + guardrail-based auto-submission
         if assessment:
-            case.status = "under_review"
+            if self._passes_auto_submit_guardrails(assessment, case, db):
+                # All guardrail criteria met — auto-submit
+                case.status = "submitted"
+                case.review_decision = "auto_approved"
+                case.reviewed_by = "system:guardrails"
+                case.reviewed_at = datetime.now(timezone.utc)
+                case.submitted_at = datetime.now(timezone.utc)
+                self._audit(db, case_id, "auto_submitted", "system:guardrails", {
+                    "score": assessment.score,
+                    "recommendation": assessment.recommendation.value,
+                    "reason": "All guardrail criteria met",
+                })
+            else:
+                case.status = "under_review"
         else:
             case.status = "evidence_gathered"
 
@@ -274,6 +282,69 @@ class CaseService:
         })
 
         db.commit()
+
+    # ── Guardrail-Based Auto-Submission ────────────────────────
+
+    def _passes_auto_submit_guardrails(
+        self,
+        assessment: Assessment,
+        case: CaseModel,
+        db: Session,
+    ) -> bool:
+        """Check if a case qualifies for automatic submission based on guardrail settings.
+
+        All of the following must be true:
+        1. auto_contest_enabled is True
+        2. Recommendation is 'contest'
+        3. Assessment is auto_submit_eligible (no contradictions, no missing evidence)
+        4. Confidence score >= min_confidence_threshold
+        5. Dispute amount <= max_dispute_amount (or no cap)
+        6. Dispute amount <= require_human_review_above (or threshold disabled)
+        """
+        from app.db.models import SystemSettingModel
+
+        # Load guardrail config from DB
+        row = db.query(SystemSettingModel).filter_by(key="guardrails").first()
+        if not row or not row.value:
+            return False  # No guardrails configured — require human review
+
+        guardrails = row.value
+
+        # 1. Auto-contest must be enabled
+        if not guardrails.get("auto_contest_enabled", False):
+            return False
+
+        # 2. Recommendation must be contest
+        if assessment.recommendation.value != "contest":
+            return False
+
+        # 3. Assessment must be auto-submit eligible
+        if not assessment.auto_submit_eligible:
+            return False
+
+        # 4. Confidence score must meet threshold
+        confidence_score = int(assessment.score * 100)
+        min_threshold = guardrails.get("min_confidence_threshold", 80)
+        if confidence_score < min_threshold:
+            return False
+
+        # 5. Dispute amount must be within max limit
+        max_amount = guardrails.get("max_dispute_amount")
+        if max_amount is not None and (case.amount or 0) > max_amount:
+            return False
+
+        # 6. Dispute amount must be below human review threshold
+        review_above = guardrails.get("require_human_review_above")
+        if review_above is not None and (case.amount or 0) > review_above:
+            return False
+
+        logger.info(
+            "Case %s passes all guardrail criteria — auto-submitting "
+            "(score=%d%%, amount=%s, recommendation=%s)",
+            case.id, confidence_score, case.amount,
+            assessment.recommendation.value,
+        )
+        return True
 
     # ── Review ────────────────────────────────────────────────
 
