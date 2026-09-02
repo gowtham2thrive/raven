@@ -1,0 +1,128 @@
+{
+  "case_id": "CASE-00036",
+  "profile": "D_CONTRADICTORY",
+  "razorpay_dispute": {
+    "id": "disp_a924d4a2Ov0036",
+    "entity": "dispute",
+    "payment_id": "pay_a924d4a2Hf0036",
+    "amount": 2499900,
+    "currency": "INR",
+    "amount_deducted": 0,
+    "reason_code": "product_not_received",
+    "reason_description": "Customer claims the product was not received.",
+    "respond_by": 1788186687,
+    "status": "open",
+    "phase": "chargeback",
+    "created_at": 1787927487,
+    "evidence": {
+      "amount": 2499900,
+      "summary": null,
+      "shipping_proof": [],
+      "billing_proof": [],
+      "cancellation_proof": [],
+      "customer_communication": [],
+      "proof_of_service": [],
+      "explanation_letter": [],
+      "refund_confirmation": [],
+      "access_activity_log": [],
+      "submitted_at": null
+    }
+  },
+  "razorpay_payment": {
+    "id": "pay_a924d4a2Hf0036",
+    "entity": "payment",
+    "amount": 2499900,
+    "currency": "INR",
+    "status": "captured",
+    "order_id": "order_a924d4a2Jb0036",
+    "method": "card",
+    "description": "Order #1234",
+    "card_id": "card_DZBt9VnTASbv3f",
+    "card": {
+      "id": "card_DZBt9VnTASbv3f",
+      "name": "Arjun Mehta",
+      "network": "Visa",
+      "last4": "4242",
+      "type": "credit",
+      "issuer": "HDFC",
+      "international": false,
+      "emi": null
+    },
+    "bank": null,
+    "wallet": null,
+    "vpa": null,
+    "email": "siddharth.agarwal@example.com",
+    "contact": "+918959228085",
+    "customer_id": "cust_a924d4a2Aa0036",
+    "captured": true,
+    "international": false,
+    "amount_refunded": 0,
+    "refund_status": null,
+    "created_at": 1787495547,
+    "notes": {}
+  },
+  "razorpay_order": {
+    "id": "order_a924d4a2Jb0036",
+    "entity": "order",
+    "amount": 2499900,
+    "amount_paid": 2499900,
+    "amount_due": 0,
+    "currency": "INR",
+    "receipt": "ORD-0036",
+    "status": "paid",
+    "notes": {
+      "item": "Wireless Headphones (Sony WH-1000XM5)",
+      "quantity": "1"
+    },
+    "created_at": 1787495487
+  },
+  "razorpay_customer": {
+    "id": "cust_a924d4a2Aa0036",
+    "entity": "customer",
+    "name": "Siddharth Agarwal",
+    "email": "siddharth.agarwal@example.com",
+    "contact": "+918959228085",
+    "gstin": null,
+    "notes": {},
+    "created_at": 1780583487
+  },
+  "merchant_data": {
+    "shipping": {
+      "carrier": "BlueDart",
+      "tracking_id": "DTC423640",
+      "shipped_at": "2026-08-24T14:31:27.657823+00:00",
+      "status": "returned_to_sender"
+    },
+    "delivery": {
+      "delivered_at": "2026-08-26T14:31:27.657823+00:00",
+      "signed_by": "S. Agarwal",
+      "proof_type": "signature",
+      "photo_proof": false,
+      "source": "merchant_system"
+    },
+    "authentication": {
+      "method": "OTP",
+      "verified": true,
+      "device_known": true,
+      "ip_country": "IN"
+    },
+    "communications": [
+      {
+        "type": "support_ticket",
+        "timestamp": "2026-08-26T16:31:27.657823+00:00",
+        "channel": "email",
+        "summary": "Customer confirmed receipt in support chat",
+        "direction": "inbound"
+      }
+    ],
+    "refunds": []
+  },
+  "expected": {
+    "recommendation": "human_review",
+    "case_strength": "medium",
+    "confidence": "low",
+    "contradictions": 1,
+    "missing_evidence": [],
+    "auto_submit_eligible": false
+  }
+}

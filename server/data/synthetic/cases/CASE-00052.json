@@ -1,0 +1,121 @@
+{
+  "case_id": "CASE-00052",
+  "profile": "UNAUTHORIZED_WEAK_AUTH",
+  "razorpay_dispute": {
+    "id": "disp_unauth_weak_52",
+    "entity": "dispute",
+    "payment_id": "pay_unauth_weak_52",
+    "amount": 750000,
+    "currency": "INR",
+    "amount_deducted": 0,
+    "reason_code": "unauthorized_transaction",
+    "reason_description": "This transaction was not made by me. I suspect my card details were compromised.",
+    "respond_by": 1787832779,
+    "status": "open",
+    "phase": "chargeback",
+    "created_at": 1787573579,
+    "evidence": {
+      "amount": 750000,
+      "summary": null,
+      "shipping_proof": [],
+      "billing_proof": [],
+      "cancellation_proof": [],
+      "customer_communication": [],
+      "proof_of_service": [],
+      "explanation_letter": [],
+      "refund_confirmation": [],
+      "access_activity_log": [],
+      "submitted_at": null
+    }
+  },
+  "razorpay_payment": {
+    "id": "pay_unauth_weak_52",
+    "entity": "payment",
+    "amount": 750000,
+    "currency": "INR",
+    "status": "captured",
+    "order_id": "order_unauth_weak_52",
+    "method": "card",
+    "description": "Order #9988",
+    "card_id": "card_UnAuthWeak52",
+    "card": {
+      "id": "card_UnAuthWeak52",
+      "name": "Vikram Patel",
+      "network": "Visa",
+      "last4": "1199",
+      "type": "debit",
+      "issuer": "SBI",
+      "international": false,
+      "emi": null
+    },
+    "bank": null,
+    "wallet": null,
+    "vpa": null,
+    "email": "vikram.p@example.com",
+    "contact": "+918765432100",
+    "customer_id": "cust_unauth_weak_52",
+    "captured": true,
+    "international": false,
+    "amount_refunded": 0,
+    "refund_status": null,
+    "created_at": 1787141639,
+    "notes": {}
+  },
+  "razorpay_order": {
+    "id": "order_unauth_weak_52",
+    "entity": "order",
+    "amount": 750000,
+    "amount_paid": 750000,
+    "amount_due": 0,
+    "currency": "INR",
+    "receipt": "ORD-9988",
+    "status": "paid",
+    "notes": {
+      "item": "Electronics Bundle",
+      "quantity": "1"
+    },
+    "created_at": 1787141579
+  },
+  "razorpay_customer": {
+    "id": "cust_unauth_weak_52",
+    "entity": "customer",
+    "name": "Vikram Patel",
+    "email": "vikram.p@example.com",
+    "contact": "+918765432100",
+    "gstin": null,
+    "notes": {},
+    "created_at": 1780056779
+  },
+  "merchant_data": {
+    "shipping": {
+      "carrier": "DTDC",
+      "tracking_id": "DTD778899",
+      "shipped_at": "2026-08-19T14:00:00+00:00",
+      "origin_city": "Delhi",
+      "destination_city": "Jaipur",
+      "status": "delivered"
+    },
+    "delivery": {
+      "delivered_at": "2026-08-21T11:30:00+00:00",
+      "signed_by": null,
+      "delivery_address": "23 MG Road, Jaipur",
+      "proof_type": "photo",
+      "photo_proof": false
+    },
+    "authentication": {
+      "method": "none",
+      "verified": false,
+      "device_known": false,
+      "ip_country": "US"
+    },
+    "communications": [],
+    "refunds": []
+  },
+  "expected": {
+    "recommendation": "human_review",
+    "case_strength": "low",
+    "confidence": "low",
+    "contradictions": 0,
+    "notes": "No auth verification + unknown device + foreign IP for domestic customer = weak defense. Should flag for human review."
+  }
+}

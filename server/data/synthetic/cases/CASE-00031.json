@@ -1,0 +1,117 @@
+{
+  "case_id": "CASE-00031",
+  "profile": "C_MISSING",
+  "razorpay_dispute": {
+    "id": "disp_36ab9749Ov0031",
+    "entity": "dispute",
+    "payment_id": "pay_36ab9749Hf0031",
+    "amount": 2499900,
+    "currency": "INR",
+    "amount_deducted": 0,
+    "reason_code": "product_not_received",
+    "reason_description": "Customer claims the product was not received.",
+    "respond_by": 1788618687,
+    "status": "open",
+    "phase": "chargeback",
+    "created_at": 1788359487,
+    "evidence": {
+      "amount": 2499900,
+      "summary": null,
+      "shipping_proof": [],
+      "billing_proof": [],
+      "cancellation_proof": [],
+      "customer_communication": [],
+      "proof_of_service": [],
+      "explanation_letter": [],
+      "refund_confirmation": [],
+      "access_activity_log": [],
+      "submitted_at": null
+    }
+  },
+  "razorpay_payment": {
+    "id": "pay_36ab9749Hf0031",
+    "entity": "payment",
+    "amount": 2499900,
+    "currency": "INR",
+    "status": "captured",
+    "order_id": "order_36ab9749Jb0031",
+    "method": "card",
+    "description": "Order #1234",
+    "card_id": "card_DZBt9VnTASbv3f",
+    "card": {
+      "id": "card_DZBt9VnTASbv3f",
+      "name": "Arjun Mehta",
+      "network": "Visa",
+      "last4": "4242",
+      "type": "credit",
+      "issuer": "HDFC",
+      "international": false,
+      "emi": null
+    },
+    "bank": null,
+    "wallet": null,
+    "vpa": null,
+    "email": "priya.reddy@example.com",
+    "contact": "+918623978346",
+    "customer_id": "cust_36ab9749Aa0031",
+    "captured": true,
+    "international": false,
+    "amount_refunded": 0,
+    "refund_status": null,
+    "created_at": 1787927547,
+    "notes": {}
+  },
+  "razorpay_order": {
+    "id": "order_36ab9749Jb0031",
+    "entity": "order",
+    "amount": 2499900,
+    "amount_paid": 2499900,
+    "amount_due": 0,
+    "currency": "INR",
+    "receipt": "ORD-0031",
+    "status": "paid",
+    "notes": {
+      "item": "Wireless Headphones (Sony WH-1000XM5)",
+      "quantity": "1"
+    },
+    "created_at": 1787927487
+  },
+  "razorpay_customer": {
+    "id": "cust_36ab9749Aa0031",
+    "entity": "customer",
+    "name": "Priya Reddy",
+    "email": "priya.reddy@example.com",
+    "contact": "+918623978346",
+    "gstin": null,
+    "notes": {},
+    "created_at": 1780583487
+  },
+  "merchant_data": {
+    "shipping": {
+      "carrier": "FedEx India",
+      "tracking_id": "FDX104710",
+      "shipped_at": "2026-08-29T14:31:27.657754+00:00",
+      "status": "in_transit"
+    },
+    "delivery": null,
+    "authentication": {
+      "method": "OTP",
+      "verified": true,
+      "device_known": true,
+      "ip_country": "IN"
+    },
+    "communications": [],
+    "refunds": []
+  },
+  "expected": {
+    "recommendation": "accept_loss",
+    "case_strength": "low",
+    "confidence": "high",
+    "contradictions": 0,
+    "missing_evidence": [
+      "delivery",
+      "delivery_proof"
+    ],
+    "auto_submit_eligible": false
+  }
+}

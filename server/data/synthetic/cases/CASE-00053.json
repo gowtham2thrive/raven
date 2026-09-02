@@ -1,0 +1,136 @@
+{
+  "case_id": "CASE-00053",
+  "profile": "NOT_AS_DESCRIBED",
+  "razorpay_dispute": {
+    "id": "disp_quality_53",
+    "entity": "dispute",
+    "payment_id": "pay_quality_53",
+    "amount": 289900,
+    "currency": "INR",
+    "amount_deducted": 0,
+    "reason_code": "product_not_as_described",
+    "reason_description": "The product I received is significantly different from what was advertised. The color is wrong and the material is cheaper than described.",
+    "respond_by": 1787832779,
+    "status": "open",
+    "phase": "chargeback",
+    "created_at": 1787573579,
+    "evidence": {
+      "amount": 289900,
+      "summary": null,
+      "shipping_proof": [],
+      "billing_proof": [],
+      "cancellation_proof": [],
+      "customer_communication": [],
+      "proof_of_service": [],
+      "explanation_letter": [],
+      "refund_confirmation": [],
+      "access_activity_log": [],
+      "submitted_at": null
+    }
+  },
+  "razorpay_payment": {
+    "id": "pay_quality_53",
+    "entity": "payment",
+    "amount": 289900,
+    "currency": "INR",
+    "status": "captured",
+    "order_id": "order_quality_53",
+    "method": "card",
+    "description": "Order #7722",
+    "card_id": "card_Quality53",
+    "card": {
+      "id": "card_Quality53",
+      "name": "Meera Reddy",
+      "network": "Visa",
+      "last4": "5566",
+      "type": "credit",
+      "issuer": "Axis",
+      "international": false,
+      "emi": null
+    },
+    "bank": null,
+    "wallet": null,
+    "vpa": null,
+    "email": "meera.r@example.com",
+    "contact": "+919876001234",
+    "customer_id": "cust_quality_53",
+    "captured": true,
+    "international": false,
+    "amount_refunded": 0,
+    "refund_status": null,
+    "created_at": 1787141639,
+    "notes": {}
+  },
+  "razorpay_order": {
+    "id": "order_quality_53",
+    "entity": "order",
+    "amount": 289900,
+    "amount_paid": 289900,
+    "amount_due": 0,
+    "currency": "INR",
+    "receipt": "ORD-7722",
+    "status": "paid",
+    "notes": {
+      "item": "Leather Messenger Bag - Tan",
+      "quantity": "1"
+    },
+    "created_at": 1787141579
+  },
+  "razorpay_customer": {
+    "id": "cust_quality_53",
+    "entity": "customer",
+    "name": "Meera Reddy",
+    "email": "meera.r@example.com",
+    "contact": "+919876001234",
+    "gstin": null,
+    "notes": {},
+    "created_at": 1780056779
+  },
+  "merchant_data": {
+    "shipping": {
+      "carrier": "BlueDart",
+      "tracking_id": "BD445566",
+      "shipped_at": "2026-08-18T10:00:00+00:00",
+      "origin_city": "Bangalore",
+      "destination_city": "Hyderabad",
+      "status": "delivered"
+    },
+    "delivery": {
+      "delivered_at": "2026-08-20T14:30:00+00:00",
+      "signed_by": "M. Reddy",
+      "delivery_address": "12 Banjara Hills, Hyderabad",
+      "proof_type": "signature",
+      "photo_proof": true
+    },
+    "authentication": {
+      "method": "OTP",
+      "verified": true,
+      "device_known": true,
+      "ip_country": "IN"
+    },
+    "communications": [
+      {
+        "type": "email",
+        "direction": "inbound",
+        "sent_at": "2026-08-21T09:00:00+05:30",
+        "subject": "Wrong product received",
+        "content": "I received a black bag instead of tan, and the material feels like faux leather not genuine."
+      },
+      {
+        "type": "email",
+        "direction": "outbound",
+        "sent_at": "2026-08-21T16:00:00+05:30",
+        "subject": "RE: Wrong product received",
+        "content": "We apologize for the inconvenience. Our return policy allows returns within 7 days. Please initiate a return."
+      }
+    ],
+    "refunds": []
+  },
+  "expected": {
+    "recommendation": "human_review",
+    "case_strength": "medium",
+    "confidence": "medium",
+    "contradictions": 0,
+    "notes": "Product quality dispute — comms show customer complaint + merchant offered return. Delivery was confirmed. Agent should weight comms and policy as critical."
+  }
+}

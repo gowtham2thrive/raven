@@ -1,0 +1,122 @@
+{
+  "case_id": "CASE-00010",
+  "profile": "A_STRONG",
+  "razorpay_dispute": {
+    "id": "disp_3cb14145Ov0010",
+    "entity": "dispute",
+    "payment_id": "pay_3cb14145Hf0010",
+    "amount": 349900,
+    "currency": "INR",
+    "amount_deducted": 0,
+    "reason_code": "product_not_received",
+    "reason_description": "Customer claims the product was not received.",
+    "respond_by": 1788359487,
+    "status": "open",
+    "phase": "chargeback",
+    "created_at": 1788100287,
+    "evidence": {
+      "amount": 349900,
+      "summary": null,
+      "shipping_proof": [],
+      "billing_proof": [],
+      "cancellation_proof": [],
+      "customer_communication": [],
+      "proof_of_service": [],
+      "explanation_letter": [],
+      "refund_confirmation": [],
+      "access_activity_log": [],
+      "submitted_at": null
+    }
+  },
+  "razorpay_payment": {
+    "id": "pay_3cb14145Hf0010",
+    "entity": "payment",
+    "amount": 349900,
+    "currency": "INR",
+    "status": "captured",
+    "order_id": "order_3cb14145Jb0010",
+    "method": "card",
+    "description": "Order #1234",
+    "card_id": "card_DZBt9VnTASbv3f",
+    "card": {
+      "id": "card_DZBt9VnTASbv3f",
+      "name": "Arjun Mehta",
+      "network": "Visa",
+      "last4": "4242",
+      "type": "credit",
+      "issuer": "HDFC",
+      "international": false,
+      "emi": null
+    },
+    "bank": null,
+    "wallet": null,
+    "vpa": null,
+    "email": "rajesh.agarwal@example.com",
+    "contact": "+917490602819",
+    "customer_id": "cust_3cb14145Aa0010",
+    "captured": true,
+    "international": false,
+    "amount_refunded": 0,
+    "refund_status": null,
+    "created_at": 1787668347,
+    "notes": {}
+  },
+  "razorpay_order": {
+    "id": "order_3cb14145Jb0010",
+    "entity": "order",
+    "amount": 349900,
+    "amount_paid": 349900,
+    "amount_due": 0,
+    "currency": "INR",
+    "receipt": "ORD-0010",
+    "status": "paid",
+    "notes": {
+      "item": "Wireless Headphones (Sony WH-1000XM5)",
+      "quantity": "1"
+    },
+    "created_at": 1787668287
+  },
+  "razorpay_customer": {
+    "id": "cust_3cb14145Aa0010",
+    "entity": "customer",
+    "name": "Rajesh Agarwal",
+    "email": "rajesh.agarwal@example.com",
+    "contact": "+917490602819",
+    "gstin": null,
+    "notes": {},
+    "created_at": 1780583487
+  },
+  "merchant_data": {
+    "shipping": {
+      "carrier": "Ecom Express",
+      "tracking_id": "BLU931889",
+      "shipped_at": "2026-08-26T14:31:27.657358+00:00",
+      "origin_city": "Mumbai",
+      "destination_city": "Hyderabad",
+      "status": "delivered"
+    },
+    "delivery": {
+      "delivered_at": "2026-08-28T14:31:27.657358+00:00",
+      "signed_by": "R. Agarwal",
+      "delivery_address": "Flat 402, Hyderabad",
+      "proof_type": "signature",
+      "photo_proof": true
+    },
+    "authentication": {
+      "method": "OTP",
+      "verified": true,
+      "device_known": true,
+      "ip_country": "IN"
+    },
+    "communications": [],
+    "refunds": []
+  },
+  "expected": {
+    "recommendation": "contest",
+    "case_strength": "high",
+    "confidence": "high",
+    "contradictions": 0,
+    "missing_evidence": [],
+    "auto_submit_eligible": true
+  }
+}

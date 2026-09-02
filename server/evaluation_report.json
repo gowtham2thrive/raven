@@ -1,0 +1,62 @@
+{
+  "total_cases": 50,
+  "passed_cases": 30,
+  "error_rate": 0.0,
+  "decision": {
+    "precision": 1.0,
+    "recall": 0.6667,
+    "f1": 0.8,
+    "accuracy": 0.8
+  },
+  "evidence": {
+    "missing_detection_rate": 0.5
+  },
+  "contradictions": {
+    "precision": 1.0,
+    "recall": 1.0
+  },
+  "false_positives": {
+    "count": 0,
+    "missed_contests": 10,
+    "estimated_cost_inr": 0.0
+  },
+  "integrity": {
+    "unsupported_claim_rate": 0.0
+  },
+  "operational": {
+    "avg_investigation_time_ms": 1.0,
+    "avg_evidence_count": 7.8
+  },
+  "profile_results": {
+    "A_STRONG": {
+      "total": 15,
+      "correct": 15,
+      "accuracy": 1.0,
+      "errors": 0
+    },
+    "B_WEAK": {
+      "total": 10,
+      "correct": 0,
+      "accuracy": 0.0,
+      "errors": 0
+    },
+    "C_MISSING": {
+      "total": 10,
+      "correct": 0,
+      "accuracy": 0.0,
+      "errors": 0
+    },
+    "D_CONTRADICTORY": {
+      "total": 10,
+      "correct": 10,
+      "accuracy": 1.0,
+      "errors": 0
+    },
+    "E_EDGE": {
+      "total": 5,
+      "correct": 5,
+      "accuracy": 1.0,
+      "errors": 0
+    }
+  }
+}

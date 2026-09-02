@@ -1,0 +1,122 @@
+{
+  "case_id": "CASE-00003",
+  "profile": "A_STRONG",
+  "razorpay_dispute": {
+    "id": "disp_6f66bd43Ov0003",
+    "entity": "dispute",
+    "payment_id": "pay_6f66bd43Hf0003",
+    "amount": 349900,
+    "currency": "INR",
+    "amount_deducted": 0,
+    "reason_code": "product_not_received",
+    "reason_description": "Customer claims the product was not received.",
+    "respond_by": 1788186687,
+    "status": "open",
+    "phase": "chargeback",
+    "created_at": 1787927487,
+    "evidence": {
+      "amount": 349900,
+      "summary": null,
+      "shipping_proof": [],
+      "billing_proof": [],
+      "cancellation_proof": [],
+      "customer_communication": [],
+      "proof_of_service": [],
+      "explanation_letter": [],
+      "refund_confirmation": [],
+      "access_activity_log": [],
+      "submitted_at": null
+    }
+  },
+  "razorpay_payment": {
+    "id": "pay_6f66bd43Hf0003",
+    "entity": "payment",
+    "amount": 349900,
+    "currency": "INR",
+    "status": "captured",
+    "order_id": "order_6f66bd43Jb0003",
+    "method": "card",
+    "description": "Order #1234",
+    "card_id": "card_DZBt9VnTASbv3f",
+    "card": {
+      "id": "card_DZBt9VnTASbv3f",
+      "name": "Arjun Mehta",
+      "network": "Visa",
+      "last4": "4242",
+      "type": "credit",
+      "issuer": "HDFC",
+      "international": false,
+      "emi": null
+    },
+    "bank": null,
+    "wallet": null,
+    "vpa": null,
+    "email": "rajesh.reddy@example.com",
+    "contact": "+917714821418",
+    "customer_id": "cust_6f66bd43Aa0003",
+    "captured": true,
+    "international": false,
+    "amount_refunded": 0,
+    "refund_status": null,
+    "created_at": 1787495547,
+    "notes": {}
+  },
+  "razorpay_order": {
+    "id": "order_6f66bd43Jb0003",
+    "entity": "order",
+    "amount": 349900,
+    "amount_paid": 349900,
+    "amount_due": 0,
+    "currency": "INR",
+    "receipt": "ORD-0003",
+    "status": "paid",
+    "notes": {
+      "item": "Wireless Headphones (Sony WH-1000XM5)",
+      "quantity": "1"
+    },
+    "created_at": 1787495487
+  },
+  "razorpay_customer": {
+    "id": "cust_6f66bd43Aa0003",
+    "entity": "customer",
+    "name": "Rajesh Reddy",
+    "email": "rajesh.reddy@example.com",
+    "contact": "+917714821418",
+    "gstin": null,
+    "notes": {},
+    "created_at": 1780583487
+  },
+  "merchant_data": {
+    "shipping": {
+      "carrier": "Delhivery",
+      "tracking_id": "BLU625063",
+      "shipped_at": "2026-08-24T14:31:27.657224+00:00",
+      "origin_city": "Mumbai",
+      "destination_city": "Kolkata",
+      "status": "delivered"
+    },
+    "delivery": {
+      "delivered_at": "2026-08-26T14:31:27.657224+00:00",
+      "signed_by": "R. Reddy",
+      "delivery_address": "Flat 402, Kolkata",
+      "proof_type": "signature",
+      "photo_proof": true
+    },
+    "authentication": {
+      "method": "OTP",
+      "verified": true,
+      "device_known": true,
+      "ip_country": "IN"
+    },
+    "communications": [],
+    "refunds": []
+  },
+  "expected": {
+    "recommendation": "contest",
+    "case_strength": "high",
+    "confidence": "high",
+    "contradictions": 0,
+    "missing_evidence": [],
+    "auto_submit_eligible": true
+  }
+}

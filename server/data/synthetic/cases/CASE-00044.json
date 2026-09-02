@@ -1,0 +1,128 @@
+{
+  "case_id": "CASE-00044",
+  "profile": "D_CONTRADICTORY",
+  "razorpay_dispute": {
+    "id": "disp_f4eb014eOv0044",
+    "entity": "dispute",
+    "payment_id": "pay_f4eb014eHf0044",
+    "amount": 849900,
+    "currency": "INR",
+    "amount_deducted": 0,
+    "reason_code": "product_not_received",
+    "reason_description": "Customer claims the product was not received.",
+    "respond_by": 1788359487,
+    "status": "open",
+    "phase": "chargeback",
+    "created_at": 1788100287,
+    "evidence": {
+      "amount": 849900,
+      "summary": null,
+      "shipping_proof": [],
+      "billing_proof": [],
+      "cancellation_proof": [],
+      "customer_communication": [],
+      "proof_of_service": [],
+      "explanation_letter": [],
+      "refund_confirmation": [],
+      "access_activity_log": [],
+      "submitted_at": null
+    }
+  },
+  "razorpay_payment": {
+    "id": "pay_f4eb014eHf0044",
+    "entity": "payment",
+    "amount": 849900,
+    "currency": "INR",
+    "status": "captured",
+    "order_id": "order_f4eb014eJb0044",
+    "method": "card",
+    "description": "Order #1234",
+    "card_id": "card_DZBt9VnTASbv3f",
+    "card": {
+      "id": "card_DZBt9VnTASbv3f",
+      "name": "Arjun Mehta",
+      "network": "Visa",
+      "last4": "4242",
+      "type": "credit",
+      "issuer": "HDFC",
+      "international": false,
+      "emi": null
+    },
+    "bank": null,
+    "wallet": null,
+    "vpa": null,
+    "email": "aditya.kumar@example.com",
+    "contact": "+917563333226",
+    "customer_id": "cust_f4eb014eAa0044",
+    "captured": true,
+    "international": false,
+    "amount_refunded": 0,
+    "refund_status": null,
+    "created_at": 1787668347,
+    "notes": {}
+  },
+  "razorpay_order": {
+    "id": "order_f4eb014eJb0044",
+    "entity": "order",
+    "amount": 849900,
+    "amount_paid": 849900,
+    "amount_due": 0,
+    "currency": "INR",
+    "receipt": "ORD-0044",
+    "status": "paid",
+    "notes": {
+      "item": "Wireless Headphones (Sony WH-1000XM5)",
+      "quantity": "1"
+    },
+    "created_at": 1787668287
+  },
+  "razorpay_customer": {
+    "id": "cust_f4eb014eAa0044",
+    "entity": "customer",
+    "name": "Aditya Kumar",
+    "email": "aditya.kumar@example.com",
+    "contact": "+917563333226",
+    "gstin": null,
+    "notes": {},
+    "created_at": 1780583487
+  },
+  "merchant_data": {
+    "shipping": {
+      "carrier": "DTDC",
+      "tracking_id": "DTC532545",
+      "shipped_at": "2026-08-26T14:31:27.657972+00:00",
+      "status": "returned_to_sender"
+    },
+    "delivery": {
+      "delivered_at": "2026-08-28T14:31:27.657972+00:00",
+      "signed_by": "A. Kumar",
+      "proof_type": "signature",
+      "photo_proof": false,
+      "source": "merchant_system"
+    },
+    "authentication": {
+      "method": "OTP",
+      "verified": true,
+      "device_known": true,
+      "ip_country": "IN"
+    },
+    "communications": [
+      {
+        "type": "support_ticket",
+        "timestamp": "2026-08-28T16:31:27.657972+00:00",
+        "channel": "email",
+        "summary": "Customer confirmed receipt in support chat",
+        "direction": "inbound"
+      }
+    ],
+    "refunds": []
+  },
+  "expected": {
+    "recommendation": "human_review",
+    "case_strength": "medium",
+    "confidence": "low",
+    "contradictions": 1,
+    "missing_evidence": [],
+    "auto_submit_eligible": false
+  }
+}

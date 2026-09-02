@@ -1,0 +1,122 @@
+{
+  "case_id": "CASE-00054",
+  "profile": "DUPLICATE_CHARGE",
+  "razorpay_dispute": {
+    "id": "disp_duplicate_54",
+    "entity": "dispute",
+    "payment_id": "pay_duplicate_54b",
+    "amount": 149900,
+    "currency": "INR",
+    "amount_deducted": 0,
+    "reason_code": "duplicate_transaction",
+    "reason_description": "I was charged twice for the same purchase. I only placed one order but see two payments.",
+    "respond_by": 1787832779,
+    "status": "open",
+    "phase": "chargeback",
+    "created_at": 1787573579,
+    "evidence": {
+      "amount": 149900,
+      "summary": null,
+      "shipping_proof": [],
+      "billing_proof": [],
+      "cancellation_proof": [],
+      "customer_communication": [],
+      "proof_of_service": [],
+      "explanation_letter": [],
+      "refund_confirmation": [],
+      "access_activity_log": [],
+      "submitted_at": null
+    }
+  },
+  "razorpay_payment": {
+    "id": "pay_duplicate_54b",
+    "entity": "payment",
+    "amount": 149900,
+    "currency": "INR",
+    "status": "captured",
+    "order_id": "order_duplicate_54",
+    "method": "upi",
+    "description": "Order #3344",
+    "card_id": null,
+    "card": null,
+    "bank": null,
+    "wallet": null,
+    "vpa": "rajesh@okaxis",
+    "email": "rajesh.k@example.com",
+    "contact": "+919112233445",
+    "customer_id": "cust_duplicate_54",
+    "captured": true,
+    "international": false,
+    "amount_refunded": 149900,
+    "refund_status": "full",
+    "created_at": 1787141699,
+    "notes": {
+      "duplicate_of": "pay_duplicate_54a"
+    }
+  },
+  "razorpay_order": {
+    "id": "order_duplicate_54",
+    "entity": "order",
+    "amount": 149900,
+    "amount_paid": 299800,
+    "amount_due": 0,
+    "currency": "INR",
+    "receipt": "ORD-3344",
+    "status": "paid",
+    "notes": {
+      "item": "Running Shoes - Nike Air Max",
+      "quantity": "1"
+    },
+    "created_at": 1787141579
+  },
+  "razorpay_customer": {
+    "id": "cust_duplicate_54",
+    "entity": "customer",
+    "name": "Rajesh Kumar",
+    "email": "rajesh.k@example.com",
+    "contact": "+919112233445",
+    "gstin": null,
+    "notes": {},
+    "created_at": 1780056779
+  },
+  "merchant_data": {
+    "shipping": {
+      "carrier": "Delhivery",
+      "tracking_id": "DLV998877",
+      "shipped_at": "2026-08-19T08:00:00+00:00",
+      "origin_city": "Mumbai",
+      "destination_city": "Pune",
+      "status": "delivered"
+    },
+    "delivery": {
+      "delivered_at": "2026-08-20T11:00:00+00:00",
+      "signed_by": "R. Kumar",
+      "delivery_address": "45 Koregaon Park, Pune",
+      "proof_type": "signature",
+      "photo_proof": false
+    },
+    "authentication": {
+      "method": "UPI_PIN",
+      "verified": true,
+      "device_known": true,
+      "ip_country": "IN"
+    },
+    "communications": [],
+    "refunds": [
+      {
+        "id": "rfnd_duplicate_54",
+        "amount": 149900,
+        "status": "processed",
+        "created_at": 1787228039,
+        "notes": "Refund for duplicate payment pay_duplicate_54b"
+      }
+    ]
+  },
+  "expected": {
+    "recommendation": "contest",
+    "case_strength": "high",
+    "confidence": "high",
+    "contradictions": 0,
+    "notes": "Duplicate charge already refunded — refund evidence is critical here. Agent should weight refund as critical."
+  }
+}

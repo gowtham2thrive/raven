@@ -1,0 +1,99 @@
+{
+  "case_id": "SIM-0AF65E",
+  "profile": "SERVICE_ACTIVE_USAGE",
+  "razorpay_dispute": {
+    "id": "disp_0af65e",
+    "entity": "dispute",
+    "payment_id": "pay_0af65e",
+    "amount": 649900,
+    "currency": "INR",
+    "amount_deducted": 0,
+    "reason_code": "service_not_rendered",
+    "reason_description": "Claiming software subscription was never provided.",
+    "respond_by": 1788623366,
+    "status": "open",
+    "phase": "chargeback",
+    "created_at": 1788277766
+  },
+  "razorpay_payment": {
+    "id": "pay_0af65e",
+    "entity": "payment",
+    "amount": 649900,
+    "currency": "INR",
+    "status": "captured",
+    "order_id": "order_0af65e",
+    "method": "card",
+    "description": "Order #1234",
+    "card_id": "card_DZBt9VnTASbv3f",
+    "card": {
+      "id": "card_DZBt9VnTASbv3f",
+      "name": "Neha Desai",
+      "network": "Visa",
+      "last4": "4242",
+      "type": "credit",
+      "issuer": "HDFC",
+      "international": false,
+      "emi": null
+    },
+    "bank": null,
+    "wallet": null,
+    "vpa": null,
+    "email": "neha.desai@example.com",
+    "contact": "+917439998186",
+    "customer_id": "cust_0af65e",
+    "captured": true,
+    "international": false,
+    "amount_refunded": 0,
+    "refund_status": null,
+    "created_at": 1787845826,
+    "notes": {}
+  },
+  "razorpay_order": {
+    "id": "order_0af65e",
+    "entity": "order",
+    "amount": 649900,
+    "amount_paid": 649900,
+    "currency": "INR",
+    "receipt": "SRV-F65E",
+    "status": "paid",
+    "notes": {
+      "item": "Cloud Database Pro Subscription"
+    },
+    "created_at": 1787845766
+  },
+  "razorpay_customer": {
+    "id": "cust_0af65e",
+    "entity": "customer",
+    "name": "Neha Desai",
+    "email": "neha.desai@example.com",
+    "contact": "+917439998186",
+    "gstin": null,
+    "notes": {},
+    "created_at": 1780588166
+  },
+  "merchant_data": {
+    "shipping": null,
+    "delivery": null,
+    "authentication": {
+      "method": "OTP",
+      "verified": true,
+      "device_known": true,
+      "ip_country": "IN"
+    },
+    "communications": [
+      {
+        "type": "support_ticket",
+        "timestamp": "2026-08-30T18:49:26.735788+00:00",
+        "channel": "email",
+        "summary": "Customer requested API quota upgrade and thanked support team.",
+        "direction": "inbound"
+      }
+    ],
+    "refunds": []
+  },
+  "expected": {
+    "recommendation": "contest",
+    "case_strength": "high",
+    "confidence": "high"
+  }
+}

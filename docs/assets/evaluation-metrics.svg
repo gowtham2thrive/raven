@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 340" width="960" height="340" fill="none">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap');
+      .eval-title { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+      .eval-mono { font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', Menlo, monospace; }
+    </style>
+
+    <linearGradient id="eval-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="eval-accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <linearGradient id="agent-accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ====================================================== -->
+  <!-- CARD 1: DETERMINISTIC PIPELINE (Blue Accent)           -->
+  <!-- ====================================================== -->
+  <g transform="translate(20, 10)">
+    <rect width="920" height="160" rx="10" fill="url(#eval-bg)" stroke="#334155" stroke-width="1.5"/>
+    <rect width="920" height="4" rx="2" fill="url(#eval-accent)"/>
+
+    <!-- Header -->
+    <text class="eval-title" x="20" y="32" font-size="13" font-weight="800" fill="#94a3b8" letter-spacing="1">DETERMINISTIC PIPELINE · 50 SYNTHETIC CASES · 5 EVIDENCE PROFILES</text>
+
+    <!-- Column Headers -->
+    <text class="eval-title" x="20" y="60" font-size="11" font-weight="700" fill="#64748b">METRIC</text>
+    <text class="eval-title" x="220" y="60" font-size="11" font-weight="700" fill="#64748b">RESULT</text>
+    <text class="eval-title" x="510" y="60" font-size="11" font-weight="700" fill="#64748b">METRIC</text>
+    <text class="eval-title" x="750" y="60" font-size="11" font-weight="700" fill="#64748b">RESULT</text>
+    <line x1="20" y1="68" x2="900" y2="68" stroke="#1e293b" stroke-width="1.5"/>
+
+    <!-- Row 1 -->
+    <text class="eval-title" x="20" y="90" font-size="12" font-weight="500" fill="#cbd5e1">Decision Precision</text>
+    <text class="eval-mono" x="220" y="90" font-size="13" font-weight="700" fill="#38bdf8">1.00</text>
+    <text class="eval-title" x="510" y="90" font-size="12" font-weight="500" fill="#cbd5e1">Unsupported Claims</text>
+    <text class="eval-mono" x="750" y="90" font-size="13" font-weight="700" fill="#38bdf8">0</text>
+    <line x1="20" y1="100" x2="900" y2="100" stroke="#1e293b" stroke-width="1"/>
+
+    <!-- Row 2 -->
+    <text class="eval-title" x="20" y="122" font-size="12" font-weight="500" fill="#cbd5e1">Decision Recall</text>
+    <text class="eval-mono" x="220" y="122" font-size="13" font-weight="700" fill="#38bdf8">1.00</text>
+    <text class="eval-title" x="510" y="122" font-size="12" font-weight="500" fill="#cbd5e1">Fabricated Evidence</text>
+    <text class="eval-mono" x="750" y="122" font-size="13" font-weight="700" fill="#38bdf8">0</text>
+    <line x1="20" y1="132" x2="900" y2="132" stroke="#1e293b" stroke-width="1"/>
+
+    <!-- Row 3 -->
+    <text class="eval-title" x="20" y="154" font-size="12" font-weight="500" fill="#cbd5e1">Contradiction False Positives</text>
+    <text class="eval-mono" x="220" y="154" font-size="13" font-weight="700" fill="#38bdf8">0</text>
+    <text class="eval-title" x="510" y="154" font-size="12" font-weight="500" fill="#cbd5e1">Pipeline Latency</text>
+    <text class="eval-mono" x="750" y="154" font-size="13" font-weight="700" fill="#94a3b8">&lt; 1ms</text>
+  </g>
+
+  <!-- ====================================================== -->
+  <!-- CARD 2: AGENT RESPONSE ESTIMATE (Purple Accent)        -->
+  <!-- ====================================================== -->
+  <g transform="translate(20, 185)">
+    <rect width="920" height="145" rx="10" fill="url(#eval-bg)" stroke="#334155" stroke-width="1.5"/>
+    <rect width="920" height="4" rx="2" fill="url(#agent-accent)"/>
+
+    <!-- Header -->
+    <text class="eval-title" x="20" y="32" font-size="13" font-weight="800" fill="#94a3b8" letter-spacing="1">AI AGENT (GEMINI) · ESTIMATED END-TO-END RESPONSE TIME</text>
+
+    <!-- Column Headers -->
+    <text class="eval-title" x="20" y="60" font-size="11" font-weight="700" fill="#64748b">STAGE</text>
+    <text class="eval-title" x="330" y="60" font-size="11" font-weight="700" fill="#64748b">DESCRIPTION</text>
+    <text class="eval-title" x="750" y="60" font-size="11" font-weight="700" fill="#64748b">TIME</text>
+    <line x1="20" y1="68" x2="900" y2="68" stroke="#1e293b" stroke-width="1.5"/>
+
+    <!-- Row 1: Evidence Gathering -->
+    <text class="eval-title" x="20" y="90" font-size="12" font-weight="500" fill="#cbd5e1">Evidence Gathering</text>
+    <text class="eval-title" x="330" y="90" font-size="11" font-weight="400" fill="#64748b">9 tools × LLM reasoning (budget: 15 calls, 60s max)</text>
+    <text class="eval-mono" x="750" y="90" font-size="13" font-weight="700" fill="#a78bfa">3–8s</text>
+    <line x1="20" y1="100" x2="900" y2="100" stroke="#1e293b" stroke-width="1"/>
+
+    <!-- Row 2: Assessment + Response -->
+    <text class="eval-title" x="20" y="122" font-size="12" font-weight="500" fill="#cbd5e1">Assessment + Draft</text>
+    <text class="eval-title" x="330" y="122" font-size="11" font-weight="400" fill="#64748b">Deterministic scoring, citation verification, response generation</text>
+    <text class="eval-mono" x="750" y="122" font-size="13" font-weight="700" fill="#a78bfa">&lt; 1s</text>
+    <line x1="20" y1="132" x2="900" y2="132" stroke="#1e293b" stroke-width="1"/>
+
+    <!-- Total Row -->
+    <text class="eval-title" x="642" y="148" font-size="11" font-weight="700" fill="#94a3b8">ESTIMATED TOTAL</text>
+    <text class="eval-mono" x="750" y="148" font-size="13" font-weight="800" fill="#c4b5fd">4–10s</text>
+  </g>
+</svg>

@@ -1,0 +1,121 @@
+{
+  "case_id": "CASE-00022",
+  "profile": "B_WEAK",
+  "razorpay_dispute": {
+    "id": "disp_3fba23a4Ov0022",
+    "entity": "dispute",
+    "payment_id": "pay_3fba23a4Hf0022",
+    "amount": 549900,
+    "currency": "INR",
+    "amount_deducted": 0,
+    "reason_code": "product_not_received",
+    "reason_description": "Customer claims the product was not received.",
+    "respond_by": 1788532287,
+    "status": "open",
+    "phase": "chargeback",
+    "created_at": 1788273087,
+    "evidence": {
+      "amount": 549900,
+      "summary": null,
+      "shipping_proof": [],
+      "billing_proof": [],
+      "cancellation_proof": [],
+      "customer_communication": [],
+      "proof_of_service": [],
+      "explanation_letter": [],
+      "refund_confirmation": [],
+      "access_activity_log": [],
+      "submitted_at": null
+    }
+  },
+  "razorpay_payment": {
+    "id": "pay_3fba23a4Hf0022",
+    "entity": "payment",
+    "amount": 549900,
+    "currency": "INR",
+    "status": "captured",
+    "order_id": "order_3fba23a4Jb0022",
+    "method": "card",
+    "description": "Order #1234",
+    "card_id": "card_DZBt9VnTASbv3f",
+    "card": {
+      "id": "card_DZBt9VnTASbv3f",
+      "name": "Arjun Mehta",
+      "network": "Visa",
+      "last4": "4242",
+      "type": "credit",
+      "issuer": "HDFC",
+      "international": false,
+      "emi": null
+    },
+    "bank": null,
+    "wallet": null,
+    "vpa": null,
+    "email": "rahul.desai@example.com",
+    "contact": "+917216892773",
+    "customer_id": "cust_3fba23a4Aa0022",
+    "captured": true,
+    "international": false,
+    "amount_refunded": 0,
+    "refund_status": null,
+    "created_at": 1787841147,
+    "notes": {}
+  },
+  "razorpay_order": {
+    "id": "order_3fba23a4Jb0022",
+    "entity": "order",
+    "amount": 549900,
+    "amount_paid": 549900,
+    "amount_due": 0,
+    "currency": "INR",
+    "receipt": "ORD-0022",
+    "status": "paid",
+    "notes": {
+      "item": "Wireless Headphones (Sony WH-1000XM5)",
+      "quantity": "1"
+    },
+    "created_at": 1787841087
+  },
+  "razorpay_customer": {
+    "id": "cust_3fba23a4Aa0022",
+    "entity": "customer",
+    "name": "Rahul Desai",
+    "email": "rahul.desai@example.com",
+    "contact": "+917216892773",
+    "gstin": null,
+    "notes": {},
+    "created_at": 1780583487
+  },
+  "merchant_data": {
+    "shipping": {
+      "carrier": "Delhivery",
+      "tracking_id": "DEL725040",
+      "shipped_at": "2026-08-28T14:31:27.657593+00:00",
+      "status": "delivered"
+    },
+    "delivery": {
+      "delivered_at": "2026-08-30T14:31:27.657593+00:00",
+      "signed_by": null,
+      "proof_type": "left_at_door",
+      "photo_proof": false
+    },
+    "authentication": {
+      "method": "OTP",
+      "verified": true,
+      "device_known": false,
+      "ip_country": "IN"
+    },
+    "communications": [],
+    "refunds": []
+  },
+  "expected": {
+    "recommendation": "human_review",
+    "case_strength": "medium",
+    "confidence": "medium",
+    "contradictions": 0,
+    "missing_evidence": [
+      "delivery_signature"
+    ],
+    "auto_submit_eligible": false
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "case_id": "SIM-EB41A3",
+  "profile": "DUPLICATE_ALREADY_REFUNDED",
+  "razorpay_dispute": {
+    "id": "disp_eb41a3",
+    "entity": "dispute",
+    "payment_id": "pay_eb41a3",
+    "amount": 349900,
+    "currency": "INR",
+    "amount_deducted": 0,
+    "reason_code": "duplicate_transaction",
+    "reason_description": "Card was billed twice for a single order.",
+    "respond_by": 1788623366,
+    "status": "open",
+    "phase": "chargeback",
+    "created_at": 1788277766
+  },
+  "razorpay_payment": {
+    "id": "pay_eb41a3",
+    "entity": "payment",
+    "amount": 349900,
+    "currency": "INR",
+    "status": "captured",
+    "order_id": "order_eb41a3",
+    "method": "card",
+    "description": "Order #1234",
+    "card_id": "card_DZBt9VnTASbv3f",
+    "card": {
+      "id": "card_DZBt9VnTASbv3f",
+      "name": "Varun Nair",
+      "network": "Visa",
+      "last4": "4242",
+      "type": "credit",
+      "issuer": "HDFC",
+      "international": false,
+      "emi": null
+    },
+    "bank": null,
+    "wallet": null,
+    "vpa": null,
+    "email": "varun.nair@example.com",
+    "contact": "+917474189928",
+    "customer_id": "cust_eb41a3",
+    "captured": true,
+    "international": false,
+    "amount_refunded": 0,
+    "refund_status": null,
+    "created_at": 1787845826,
+    "notes": {}
+  },
+  "razorpay_order": {
+    "id": "order_eb41a3",
+    "entity": "order",
+    "amount": 349900,
+    "amount_paid": 349900,
+    "amount_due": 0,
+    "currency": "INR",
+    "receipt": "ORD-41A3",
+    "status": "paid",
+    "notes": {
+      "item": "Wireless Headphones (Sony WH-1000XM5)",
+      "quantity": "1"
+    },
+    "created_at": 1787845766
+  },
+  "razorpay_customer": {
+    "id": "cust_eb41a3",
+    "entity": "customer",
+    "name": "Varun Nair",
+    "email": "varun.nair@example.com",
+    "contact": "+917474189928",
+    "gstin": null,
+    "notes": {},
+    "created_at": 1780588166
+  },
+  "merchant_data": {
+    "shipping": {
+      "carrier": "BlueDart",
+      "tracking_id": "DEL328562",
+      "shipped_at": "2026-08-28T15:49:26.816653+00:00",
+      "status": "delivered"
+    },
+    "delivery": {
+      "delivered_at": "2026-08-30T15:49:26.816653+00:00",
+      "signed_by": "Varun Nair",
+      "proof_type": "signature",
+      "photo_proof": true
+    },
+    "authentication": {
+      "method": "OTP",
+      "verified": true,
+      "device_known": true,
+      "ip_country": "IN"
+    },
+    "communications": [],
+    "refunds": [
+      {
+        "id": "rfnd_eb41a301",
+        "entity": "refund",
+        "amount": 349900,
+        "currency": "INR",
+        "payment_id": "pay_eb41a3",
+        "status": "processed",
+        "speed_processed": "normal",
+        "speed_requested": "normal",
+        "created_at": 1787853026,
+        "notes": {}
+      }
+    ]
+  },
+  "expected": {
+    "recommendation": "contest",
+    "case_strength": "high",
+    "confidence": "high"
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "case_id": "SIM-00C042",
+  "profile": "A_STRONG",
+  "razorpay_dispute": {
+    "id": "disp_00c042",
+    "entity": "dispute",
+    "payment_id": "pay_00c042",
+    "amount": 2499900,
+    "currency": "INR",
+    "amount_deducted": 0,
+    "reason_code": "product_not_received",
+    "reason_description": "Customer claims the product was not received.",
+    "respond_by": 1788623366,
+    "status": "open",
+    "phase": "chargeback",
+    "created_at": 1788277766,
+    "evidence": {
+      "amount": 2499900,
+      "summary": null,
+      "shipping_proof": [],
+      "billing_proof": [],
+      "cancellation_proof": [],
+      "customer_communication": [],
+      "proof_of_service": [],
+      "explanation_letter": [],
+      "refund_confirmation": [],
+      "access_activity_log": [],
+      "submitted_at": null
+    }
+  },
+  "razorpay_payment": {
+    "id": "pay_00c042",
+    "entity": "payment",
+    "amount": 2499900,
+    "currency": "INR",
+    "status": "captured",
+    "order_id": "order_00c042",
+    "method": "card",
+    "description": "Order #1234",
+    "card_id": "card_DZBt9VnTASbv3f",
+    "card": {
+      "id": "card_DZBt9VnTASbv3f",
+      "name": "Suresh Saxena",
+      "network": "Visa",
+      "last4": "4242",
+      "type": "credit",
+      "issuer": "HDFC",
+      "international": false,
+      "emi": null
+    },
+    "bank": null,
+    "wallet": null,
+    "vpa": null,
+    "email": "suresh.saxena@example.com",
+    "contact": "+919008142122",
+    "customer_id": "cust_00c042",
+    "captured": true,
+    "international": false,
+    "amount_refunded": 0,
+    "refund_status": null,
+    "created_at": 1787845826,
+    "notes": {}
+  },
+  "razorpay_order": {
+    "id": "order_00c042",
+    "entity": "order",
+    "amount": 2499900,
+    "amount_paid": 2499900,
+    "amount_due": 0,
+    "currency": "INR",
+    "receipt": "ORD-C042",
+    "status": "paid",
+    "notes": {
+      "item": "Wireless Headphones (Sony WH-1000XM5)",
+      "quantity": "1"
+    },
+    "created_at": 1787845766
+  },
+  "razorpay_customer": {
+    "id": "cust_00c042",
+    "entity": "customer",
+    "name": "Suresh Saxena",
+    "email": "suresh.saxena@example.com",
+    "contact": "+919008142122",
+    "gstin": null,
+    "notes": {},
+    "created_at": 1780588166
+  },
+  "merchant_data": {
+    "shipping": {
+      "carrier": "Ecom Express",
+      "tracking_id": "BLU538437",
+      "shipped_at": "2026-08-28T15:49:26.535738+00:00",
+      "origin_city": "Mumbai",
+      "destination_city": "Lucknow",
+      "status": "delivered"
+    },
+    "delivery": {
+      "delivered_at": "2026-08-30T15:49:26.535738+00:00",
+      "signed_by": "S. Saxena",
+      "delivery_address": "Flat 402, Lucknow",
+      "proof_type": "signature",
+      "photo_proof": true
+    },
+    "authentication": {
+      "method": "OTP",
+      "verified": true,
+      "device_known": true,
+      "ip_country": "IN"
+    },
+    "communications": [],
+    "refunds": []
+  },
+  "expected": {
+    "recommendation": "contest",
+    "case_strength": "high",
+    "confidence": "high",
+    "auto_submit_eligible": true
+  }
+}

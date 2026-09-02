@@ -1,0 +1,117 @@
+{
+  "case_id": "SIM-0AC1AE",
+  "profile": "E_EDGE",
+  "razorpay_dispute": {
+    "id": "disp_0ac1ae",
+    "entity": "dispute",
+    "payment_id": "pay_0ac1ae",
+    "amount": 699900,
+    "currency": "INR",
+    "amount_deducted": 0,
+    "reason_code": "product_not_received",
+    "reason_description": "Customer claims the product was not received.",
+    "respond_by": 1788623366,
+    "status": "open",
+    "phase": "chargeback",
+    "created_at": 1788277766,
+    "evidence": {
+      "amount": 699900,
+      "summary": null,
+      "shipping_proof": [],
+      "billing_proof": [],
+      "cancellation_proof": [],
+      "customer_communication": [],
+      "proof_of_service": [],
+      "explanation_letter": [],
+      "refund_confirmation": [],
+      "access_activity_log": [],
+      "submitted_at": null
+    }
+  },
+  "razorpay_payment": {
+    "id": "pay_0ac1ae",
+    "entity": "payment",
+    "amount": 699900,
+    "currency": "INR",
+    "status": "captured",
+    "order_id": "order_0ac1ae",
+    "method": "card",
+    "description": "Order #1234",
+    "card_id": "card_DZBt9VnTASbv3f",
+    "card": {
+      "id": "card_DZBt9VnTASbv3f",
+      "name": "Manish Gupta",
+      "network": "Visa",
+      "last4": "4242",
+      "type": "credit",
+      "issuer": "HDFC",
+      "international": false,
+      "emi": null
+    },
+    "bank": null,
+    "wallet": null,
+    "vpa": null,
+    "email": "manish.gupta@example.com",
+    "contact": "+917786328413",
+    "customer_id": "cust_0ac1ae",
+    "captured": true,
+    "international": false,
+    "amount_refunded": 0,
+    "refund_status": null,
+    "created_at": 1787845826,
+    "notes": {}
+  },
+  "razorpay_order": {
+    "id": "order_0ac1ae",
+    "entity": "order",
+    "amount": 699900,
+    "amount_paid": 699900,
+    "amount_due": 0,
+    "currency": "INR",
+    "receipt": "ORD-C1AE",
+    "status": "paid",
+    "notes": {
+      "item": "Wireless Headphones (Sony WH-1000XM5)",
+      "quantity": "1"
+    },
+    "created_at": 1787845766
+  },
+  "razorpay_customer": {
+    "id": "cust_0ac1ae",
+    "entity": "customer",
+    "name": "Manish Gupta",
+    "email": "manish.gupta@example.com",
+    "contact": "+917786328413",
+    "gstin": null,
+    "notes": {},
+    "created_at": 1780588166
+  },
+  "merchant_data": {
+    "shipping": {
+      "carrier": "FedEx India",
+      "tracking_id": "ECM820612",
+      "shipped_at": "2026-08-28T15:49:26.899535+00:00",
+      "status": "delivered"
+    },
+    "delivery": {
+      "delivered_at": "2026-08-27T13:49:26.899535+00:00",
+      "timezone": "America/Los_Angeles",
+      "signed_by": "Manish",
+      "proof_type": "signature",
+      "photo_proof": true
+    },
+    "authentication": {
+      "method": "OTP",
+      "verified": true,
+      "device_known": true,
+      "ip_country": "IN"
+    },
+    "communications": [],
+    "refunds": []
+  },
+  "expected": {
+    "recommendation": "human_review",
+    "case_strength": "medium",
+    "confidence": "medium"
+  }
+}

@@ -1,0 +1,357 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 760" width="960" height="760" fill="none">
+  <defs>
+    <!-- Brand Font Import -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap');
+      .font-title { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+      .font-mono { font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', Menlo, Consolas, monospace; }
+    </style>
+
+    <!-- Official Brand Shield Emblem Gradients -->
+    <linearGradient id="raven-shield-bg" x1="8" y1="4" x2="56" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0B3469"/>
+      <stop offset="100%" stop-color="#041E49"/>
+    </linearGradient>
+    <linearGradient id="raven-shield-border" x1="8" y1="4" x2="56" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="raven-beak-d" x1="36" y1="14" x2="60" y2="30" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+    <linearGradient id="raven-crown-d" x1="26" y1="14" x2="44" y2="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </linearGradient>
+    <linearGradient id="raven-wing-d" x1="8" y1="14" x2="30" y2="50" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#528FF0"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="raven-base-d" x1="18" y1="32" x2="36" y2="46" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1D4ED8"/>
+      <stop offset="100%" stop-color="#0F2854"/>
+    </linearGradient>
+
+    <!-- Card Backgrounds: Sleek slate fills for 100% readability across Light & Dark modes -->
+    <linearGradient id="card-dark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="card-pipeline" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    
+    <!-- Accent Gradients -->
+    <linearGradient id="grad-title" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <linearGradient id="grad-cyan" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <linearGradient id="grad-purple" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+    <linearGradient id="grad-green" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+    <linearGradient id="grad-amber" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="grad-rose" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e11d48"/>
+      <stop offset="100%" stop-color="#fb7185"/>
+    </linearGradient>
+
+    <!-- Flow Arrow Markers -->
+    <marker id="arrow-slate" viewBox="0 0 10 7" refX="9" refY="3.5" markerWidth="7" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 3.5 L 0 7 z" fill="#64748b"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 7" refX="9" refY="3.5" markerWidth="7" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 3.5 L 0 7 z" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 7" refX="9" refY="3.5" markerWidth="7" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 3.5 L 0 7 z" fill="#818cf8"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 7" refX="9" refY="3.5" markerWidth="7" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 3.5 L 0 7 z" fill="#34d399"/>
+    </marker>
+    <marker id="arrow-rose" viewBox="0 0 10 7" refX="9" refY="3.5" markerWidth="7" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 3.5 L 0 7 z" fill="#fb7185"/>
+    </marker>
+  </defs>
+
+  <!-- ==================================================== -->
+  <!-- 1. HEADER SECTION (Official Brand Lockup + Title)     -->
+  <!-- ==================================================== -->
+  <g transform="translate(480, 20)">
+    <!-- Brand Logo Group (Shield + Text) - Centered -->
+    <g transform="translate(-165, 0)">
+      <!-- Official Shield Emblem (Scaled to match text cap-height) -->
+      <g transform="translate(0, 2) scale(0.40)">
+        <path d="M 32 4 L 56 12 V 34 C 56 48, 45 56, 32 60 C 19 56, 8 48, 8 34 V 12 Z" 
+              fill="url(#raven-shield-bg)" 
+              stroke="url(#raven-shield-border)" 
+              stroke-width="2.5" 
+              stroke-linejoin="round"/>
+        <g transform="translate(0.5, 2) scale(0.92)" transform-origin="32 32">
+          <polygon points="10,24.5 25,14.5 29,33.5 14,49 8,36" fill="url(#raven-wing-d)"/>
+          <polygon points="26.5,14 43.5,14 35.5,31 29.5,33" fill="url(#raven-crown-d)"/>
+          <polygon points="44.5,14.5 59.5,26 36.5,31.8" fill="url(#raven-beak-d)"/>
+          <polygon points="29.8,35.5 35.5,33.5 28,46.5 17.5,46.5" fill="url(#raven-base-d)"/>
+          <circle cx="34.8" cy="22" r="2.8" fill="#041E49"/>
+          <circle cx="34.8" cy="22" r="1.4" fill="#38BDF8"/>
+        </g>
+      </g>
+
+      <!-- Wordmark in official Inter font -->
+      <text class="font-title" x="28" y="21" font-size="18" font-weight="800" fill="#ffffff" letter-spacing="2.5">RAVEN</text>
+      <text class="font-title" x="114" y="21" font-size="15" font-weight="600" fill="#94a3b8" letter-spacing="1.2">SYSTEM ARCHITECTURE</text>
+    </g>
+
+    <!-- Gradient Bar -->
+    <rect x="-165" y="32" width="330" height="2" rx="1" fill="url(#grad-title)"/>
+    <text class="font-title" x="0" y="48" text-anchor="middle" font-size="11.5" font-weight="500" fill="#94a3b8">Autonomous Evidence Navigation, Deterministic Verification &amp; Resolution Engine</text>
+  </g>
+
+  <!-- ==================================================== -->
+  <!-- 2. INGESTION & DATA SOURCES ROW                     -->
+  <!-- ==================================================== -->
+
+  <!-- Card 1: Razorpay Webhook -->
+  <g transform="translate(40, 88)">
+    <rect width="240" height="82" rx="10" fill="url(#card-dark)" stroke="#f59e0b" stroke-width="2"/>
+    <rect x="0" y="0" width="240" height="4" rx="2" fill="url(#grad-amber)"/>
+    <rect x="14" y="14" width="80" height="18" rx="4" fill="#78350f"/>
+    <text class="font-title" x="54" y="27" text-anchor="middle" font-size="10" font-weight="700" fill="#fde68a">TRIGGER</text>
+    <text class="font-title" x="14" y="48" font-size="14" font-weight="700" fill="#ffffff">Razorpay Webhooks</text>
+    <text class="font-mono" x="14" y="66" font-size="11" font-weight="500" fill="#fbbf24">payment.dispute.created</text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <line x1="280" y1="129" x2="316" y2="129" stroke="#64748b" stroke-width="2" marker-end="url(#arrow-slate)"/>
+
+  <!-- Card 2: API & Gateway Layer -->
+  <g transform="translate(324, 88)">
+    <rect width="272" height="82" rx="10" fill="url(#card-dark)" stroke="#0284c7" stroke-width="2"/>
+    <rect x="0" y="0" width="272" height="4" rx="2" fill="url(#grad-cyan)"/>
+    <rect x="14" y="14" width="94" height="18" rx="4" fill="#0c4a6e"/>
+    <text class="font-title" x="61" y="27" text-anchor="middle" font-size="10" font-weight="700" fill="#7dd3fc">FASTAPI CORE</text>
+    <text class="font-title" x="14" y="48" font-size="14" font-weight="700" fill="#ffffff">API &amp; Streaming Gateway</text>
+    <text class="font-title" x="14" y="66" font-size="11" font-weight="500" fill="#bae6fd">42 REST Endpoints · Live SSE Stream</text>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <line x1="596" y1="129" x2="632" y2="129" stroke="#64748b" stroke-width="2" marker-end="url(#arrow-slate)"/>
+
+  <!-- Card 3: Connectors & Integration Hub -->
+  <g transform="translate(640, 88)">
+    <rect width="280" height="82" rx="10" fill="url(#card-dark)" stroke="#818cf8" stroke-width="2"/>
+    <rect x="0" y="0" width="280" height="4" rx="2" fill="url(#grad-purple)"/>
+    <rect x="14" y="14" width="108" height="18" rx="4" fill="#312e81"/>
+    <text class="font-title" x="68" y="27" text-anchor="middle" font-size="10" font-weight="700" fill="#c7d2fe">INTEGRATION HUB</text>
+    <text class="font-title" x="14" y="48" font-size="14" font-weight="700" fill="#ffffff">Universal Adapters</text>
+    <text class="font-title" x="14" y="66" font-size="11" font-weight="500" fill="#c7d2fe">REST · SQL DB · CSV/PDF · Carriers</text>
+  </g>
+
+  <!-- Downward Flow from API to Pipeline -->
+  <path d="M 460 170 L 460 196" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+
+  <!-- ==================================================== -->
+  <!-- 3. CANONICAL INVESTIGATION PIPELINE CONTAINER        -->
+  <!-- ==================================================== -->
+  <g transform="translate(40, 204)">
+    <!-- Container Body -->
+    <rect width="880" height="198" rx="12" fill="url(#card-pipeline)" stroke="#4338ca" stroke-width="2"/>
+    <rect x="0" y="0" width="880" height="4" rx="2" fill="url(#grad-purple)"/>
+
+    <!-- Pipeline Header Badge -->
+    <rect x="16" y="14" width="168" height="22" rx="5" fill="#312e81"/>
+    <text class="font-title" x="26" y="29" font-size="11" font-weight="800" fill="#a5b4fc" letter-spacing="1">CANONICAL PIPELINE</text>
+    <text class="font-mono" x="194" y="29" font-size="11" font-weight="600" fill="#818cf8">server/app/pipeline/</text>
+    <text class="font-title" x="864" y="29" text-anchor="end" font-size="11" font-weight="500" fill="#cbd5e1">Business-Agnostic Investigation &amp; Assessment</text>
+
+    <!-- Stage 1: Ingestion -->
+    <g transform="translate(16, 48)">
+      <rect width="156" height="84" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+      <rect x="8" y="8" width="22" height="18" rx="3" fill="#3b82f6"/>
+      <text class="font-title" x="19" y="21" text-anchor="middle" font-size="10" font-weight="800" fill="#ffffff">01</text>
+      <text class="font-title" x="36" y="21" font-size="11" font-weight="700" fill="#93c5fd">INGESTION</text>
+      <text class="font-title" x="10" y="44" font-size="13" font-weight="700" fill="#ffffff">Normalizer</text>
+      <text class="font-title" x="10" y="60" font-size="11" font-weight="500" fill="#94a3b8">Raw Data to</text>
+      <text class="font-title" x="10" y="74" font-size="11" font-weight="600" fill="#38bdf8">Canonical Model</text>
+    </g>
+
+    <!-- Arrow 1 -> 2 -->
+    <line x1="172" y1="90" x2="188" y2="90" stroke="#818cf8" stroke-width="2" marker-end="url(#arrow-purple)"/>
+
+    <!-- Stage 2: Timeline -->
+    <g transform="translate(192, 48)">
+      <rect width="156" height="84" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+      <rect x="8" y="8" width="22" height="18" rx="3" fill="#6366f1"/>
+      <text class="font-title" x="19" y="21" text-anchor="middle" font-size="10" font-weight="800" fill="#ffffff">02</text>
+      <text class="font-title" x="36" y="21" font-size="11" font-weight="700" fill="#a5b4fc">CHRONOLOGY</text>
+      <text class="font-title" x="10" y="44" font-size="13" font-weight="700" fill="#ffffff">Timeline Engine</text>
+      <text class="font-title" x="10" y="60" font-size="11" font-weight="500" fill="#94a3b8">UTC Normalization</text>
+      <text class="font-title" x="10" y="74" font-size="11" font-weight="600" fill="#a5b4fc">Preserve Local TZ</text>
+    </g>
+
+    <!-- Arrow 2 -> 3 -->
+    <line x1="348" y1="90" x2="364" y2="90" stroke="#818cf8" stroke-width="2" marker-end="url(#arrow-purple)"/>
+
+    <!-- Stage 3: Completeness Checklist -->
+    <g transform="translate(368, 48)">
+      <rect width="156" height="84" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+      <rect x="8" y="8" width="22" height="18" rx="3" fill="#8b5cf6"/>
+      <text class="font-title" x="19" y="21" text-anchor="middle" font-size="10" font-weight="800" fill="#ffffff">03</text>
+      <text class="font-title" x="36" y="21" font-size="11" font-weight="700" fill="#c4b5fd">CHECKLIST</text>
+      <text class="font-title" x="10" y="44" font-size="13" font-weight="700" fill="#ffffff">Evidence Audit</text>
+      <text class="font-title" x="10" y="60" font-size="11" font-weight="500" fill="#94a3b8">11 Categories</text>
+      <text class="font-title" x="10" y="74" font-size="11" font-weight="600" fill="#c4b5fd">Weight Verification</text>
+    </g>
+
+    <!-- Arrow 3 -> 4 -->
+    <line x1="524" y1="90" x2="540" y2="90" stroke="#818cf8" stroke-width="2" marker-end="url(#arrow-purple)"/>
+
+    <!-- Stage 4: Contradiction Detection -->
+    <g transform="translate(544, 48)">
+      <rect width="156" height="84" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+      <rect x="8" y="8" width="22" height="18" rx="3" fill="#ec4899"/>
+      <text class="font-title" x="19" y="21" text-anchor="middle" font-size="10" font-weight="800" fill="#ffffff">04</text>
+      <text class="font-title" x="36" y="21" font-size="11" font-weight="700" fill="#f472b6">CONFLICTS</text>
+      <text class="font-title" x="10" y="44" font-size="13" font-weight="700" fill="#ffffff">Contradictions</text>
+      <text class="font-title" x="10" y="60" font-size="11" font-weight="500" fill="#94a3b8">Cross-Source Rules</text>
+      <text class="font-title" x="10" y="74" font-size="11" font-weight="600" fill="#f472b6">Delivery vs Tracking</text>
+    </g>
+
+    <!-- Arrow 4 -> 5 -->
+    <line x1="700" y1="90" x2="716" y2="90" stroke="#818cf8" stroke-width="2" marker-end="url(#arrow-purple)"/>
+
+    <!-- Stage 5: Assessment & Scoring -->
+    <g transform="translate(720, 48)">
+      <rect width="144" height="84" rx="8" fill="#1e1b4b" stroke="#6366f1" stroke-width="2"/>
+      <rect x="8" y="8" width="22" height="18" rx="3" fill="#4f46e5"/>
+      <text class="font-title" x="19" y="21" text-anchor="middle" font-size="10" font-weight="800" fill="#ffffff">05</text>
+      <text class="font-title" x="36" y="21" font-size="11" font-weight="700" fill="#a5b4fc">SCORING</text>
+      <text class="font-title" x="10" y="44" font-size="13" font-weight="700" fill="#ffffff">Assess Engine</text>
+      <text class="font-title" x="10" y="60" font-size="11" font-weight="500" fill="#94a3b8">Deterministic</text>
+      <text class="font-title" x="10" y="74" font-size="11" font-weight="700" fill="#38bdf8">0.00 – 1.00 Rating</text>
+    </g>
+
+    <!-- Artifacts Strip inside Pipeline -->
+    <g transform="translate(16, 146)">
+      <rect width="848" height="38" rx="6" fill="#0f172a" stroke="#1e293b" stroke-width="1.5"/>
+      <text class="font-title" x="14" y="24" font-size="11" font-weight="700" fill="#818cf8">OUTPUT ARTIFACTS</text>
+      <circle cx="140" cy="20" r="3" fill="#3b82f6"/>
+      <text class="font-title" x="150" y="24" font-size="11" font-weight="500" fill="#cbd5e1">Evidence Items</text>
+      <circle cx="260" cy="20" r="3" fill="#6366f1"/>
+      <text class="font-title" x="270" y="24" font-size="11" font-weight="500" fill="#cbd5e1">Reconstructed Timeline</text>
+      <circle cx="430" cy="20" r="3" fill="#ec4899"/>
+      <text class="font-title" x="440" y="24" font-size="11" font-weight="500" fill="#cbd5e1">Detected Contradictions</text>
+      <circle cx="610" cy="20" r="3" fill="#10b981"/>
+      <text class="font-title" x="620" y="24" font-size="11" font-weight="500" fill="#cbd5e1">Evidence-Linked Draft</text>
+      <circle cx="770" cy="20" r="3" fill="#f59e0b"/>
+      <text class="font-title" x="780" y="24" font-size="11" font-weight="500" fill="#cbd5e1">Audit Log</text>
+    </g>
+  </g>
+
+  <!-- Downward Flow from Pipeline to Reasoning Layer -->
+  <path d="M 480 402 L 480 426" stroke="#818cf8" stroke-width="2.5" marker-end="url(#arrow-purple)"/>
+
+  <!-- ==================================================== -->
+  <!-- 4. DUAL-MODE REASONING LAYER                         -->
+  <!-- ==================================================== -->
+
+  <!-- Branch Left: AI Agent -->
+  <g transform="translate(60, 432)">
+    <rect width="370" height="96" rx="10" fill="url(#card-dark)" stroke="#0284c7" stroke-width="2"/>
+    <rect x="0" y="0" width="370" height="4" rx="2" fill="url(#grad-cyan)"/>
+    <rect x="16" y="14" width="138" height="20" rx="4" fill="#0369a1"/>
+    <text class="font-title" x="85" y="28" text-anchor="middle" font-size="10" font-weight="700" fill="#e0f2fe">AI-ENHANCED AGENT</text>
+    <text class="font-title" x="16" y="52" font-size="15" font-weight="700" fill="#ffffff">Google Gemini ADK Agent</text>
+    <text class="font-title" x="16" y="70" font-size="12" font-weight="500" fill="#cbd5e1">Autonomous tool orchestration &amp; dispute interpretation</text>
+    <text class="font-mono" x="16" y="87" font-size="11" font-weight="600" fill="#38bdf8">gemini-3.6-flash · 3.7-flash · 2.5-pro</text>
+  </g>
+
+  <!-- Central OR Divider -->
+  <g transform="translate(480, 480)">
+    <circle r="18" fill="#1e293b" stroke="#818cf8" stroke-width="2"/>
+    <text class="font-title" y="4" text-anchor="middle" font-size="11" font-weight="800" fill="#ffffff">OR</text>
+  </g>
+
+  <!-- Branch Right: Deterministic Mode -->
+  <g transform="translate(530, 432)">
+    <rect width="370" height="96" rx="10" fill="url(#card-dark)" stroke="#059669" stroke-width="2"/>
+    <rect x="0" y="0" width="370" height="4" rx="2" fill="url(#grad-green)"/>
+    <rect x="16" y="14" width="168" height="20" rx="4" fill="#065f46"/>
+    <text class="font-title" x="100" y="28" text-anchor="middle" font-size="10" font-weight="700" fill="#d1fae5">STANDALONE / FALLBACK</text>
+    <text class="font-title" x="16" y="52" font-size="15" font-weight="700" fill="#ffffff">Deterministic Pipeline Runner</text>
+    <text class="font-title" x="16" y="70" font-size="12" font-weight="500" fill="#cbd5e1">Fixed verification sequence · zero external LLM calls</text>
+    <text class="font-mono" x="16" y="87" font-size="11" font-weight="600" fill="#34d399">Reproducible · 100% offline &amp; testable</text>
+  </g>
+
+  <!-- Flow Converging to Routing Engine -->
+  <path d="M 245 528 L 245 550 L 472 550" stroke="#38bdf8" stroke-width="2"/>
+  <path d="M 715 528 L 715 550 L 488 550" stroke="#34d399" stroke-width="2"/>
+  <path d="M 480 550 L 480 566" stroke="#818cf8" stroke-width="2.5" marker-end="url(#arrow-purple)"/>
+
+  <!-- ==================================================== -->
+  <!-- 5. ROUTING ENGINE & VERDICT ROW                     -->
+  <!-- ==================================================== -->
+
+  <!-- Central Routing Bar -->
+  <g transform="translate(320, 570)">
+    <rect width="320" height="44" rx="8" fill="#1e293b" stroke="#6366f1" stroke-width="2"/>
+    <text class="font-title" x="160" y="20" text-anchor="middle" font-size="12" font-weight="800" fill="#c7d2fe">AUTOMATED ROUTING GATE</text>
+    <text class="font-mono" x="160" y="35" text-anchor="middle" font-size="11" font-weight="600" fill="#38bdf8">score ≥ 0.80 ∧ contradictions == 0</text>
+  </g>
+
+  <!-- 3 Decision Output Paths -->
+  <path d="M 360 614 L 180 638" stroke="#34d399" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <path d="M 480 614 L 480 638" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <path d="M 600 614 L 780 638" stroke="#fb7185" stroke-width="2" marker-end="url(#arrow-rose)"/>
+
+  <!-- Decision 1: Auto-Submit (Contest) -->
+  <g transform="translate(60, 644)">
+    <rect width="250" height="76" rx="10" fill="url(#card-dark)" stroke="#10b981" stroke-width="2"/>
+    <rect x="0" y="0" width="250" height="4" rx="2" fill="url(#grad-green)"/>
+    <text class="font-title" x="16" y="28" font-size="14" font-weight="800" fill="#34d399">✓ AUTO-SUBMIT</text>
+    <text class="font-title" x="16" y="47" font-size="12" font-weight="600" fill="#ffffff">High Confidence Defense</text>
+    <text class="font-title" x="16" y="63" font-size="11" font-weight="500" fill="#cbd5e1">Submitted directly to Razorpay API</text>
+  </g>
+
+  <!-- Decision 2: Human Review -->
+  <g transform="translate(355, 644)">
+    <rect width="250" height="76" rx="10" fill="url(#card-dark)" stroke="#38bdf8" stroke-width="2"/>
+    <rect x="0" y="0" width="250" height="4" rx="2" fill="url(#grad-cyan)"/>
+    <text class="font-title" x="16" y="28" font-size="14" font-weight="800" fill="#38bdf8">👤 HUMAN REVIEW</text>
+    <text class="font-title" x="16" y="47" font-size="12" font-weight="600" fill="#ffffff">Investigator Dashboard</text>
+    <text class="font-title" x="16" y="63" font-size="11" font-weight="500" fill="#cbd5e1">Inspect timeline &amp; approve / contest</text>
+  </g>
+
+  <!-- Decision 3: Accept Loss -->
+  <g transform="translate(650, 644)">
+    <rect width="250" height="76" rx="10" fill="url(#card-dark)" stroke="#f43f5e" stroke-width="2"/>
+    <rect x="0" y="0" width="250" height="4" rx="2" fill="url(#grad-rose)"/>
+    <text class="font-title" x="16" y="28" font-size="14" font-weight="800" fill="#fb7185">✗ ACCEPT LOSS</text>
+    <text class="font-title" x="16" y="47" font-size="12" font-weight="600" fill="#ffffff">Insufficient Evidence</text>
+    <text class="font-title" x="16" y="63" font-size="11" font-weight="500" fill="#cbd5e1">Score &lt; 0.40 · Avoid penalty fees</text>
+  </g>
+
+  <!-- ==================================================== -->
+  <!-- 6. FOOTER ANNOTATION                                -->
+  <!-- ==================================================== -->
+  <g transform="translate(480, 744)" text-anchor="middle">
+    <text class="font-title" font-size="11" font-weight="500" fill="#94a3b8">
+      🔒 Full Auditability: 9 Relational Tables (SQLite / PostgreSQL) · Zero Hallucinated Claims · Deterministic Reproducibility
+    </text>
+  </g>
+
+</svg>

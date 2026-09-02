@@ -1,0 +1,94 @@
+{
+  "case_id": "SIM-C21C21",
+  "profile": "UNAUTHORIZED_WEAK_AUTH",
+  "razorpay_dispute": {
+    "id": "disp_c21c21",
+    "entity": "dispute",
+    "payment_id": "pay_c21c21",
+    "amount": 1200000,
+    "currency": "INR",
+    "amount_deducted": 0,
+    "reason_code": "unauthorized_transaction",
+    "reason_description": "Fraudulent transaction reported by issuer.",
+    "respond_by": 1788623366,
+    "status": "open",
+    "phase": "chargeback",
+    "created_at": 1788277766
+  },
+  "razorpay_payment": {
+    "id": "pay_c21c21",
+    "entity": "payment",
+    "amount": 1200000,
+    "currency": "INR",
+    "status": "captured",
+    "order_id": "order_c21c21",
+    "method": "card",
+    "description": "Order #1234",
+    "card_id": "card_DZBt9VnTASbv3f",
+    "card": {
+      "id": "card_DZBt9VnTASbv3f",
+      "name": "Pooja Kumar",
+      "network": "Visa",
+      "last4": "4242",
+      "type": "credit",
+      "issuer": "HDFC",
+      "international": false,
+      "emi": null
+    },
+    "bank": null,
+    "wallet": null,
+    "vpa": null,
+    "email": "pooja.kumar@example.com",
+    "contact": "+918019598672",
+    "customer_id": "cust_c21c21",
+    "captured": true,
+    "international": false,
+    "amount_refunded": 0,
+    "refund_status": null,
+    "created_at": 1787845826,
+    "notes": {}
+  },
+  "razorpay_order": {
+    "id": "order_c21c21",
+    "entity": "order",
+    "amount": 1200000,
+    "amount_paid": 1200000,
+    "currency": "INR",
+    "receipt": "GFT-1C21",
+    "status": "paid",
+    "notes": {
+      "item": "Digital Gaming Gift Card"
+    },
+    "created_at": 1787845766
+  },
+  "razorpay_customer": {
+    "id": "cust_c21c21",
+    "entity": "customer",
+    "name": "Pooja Kumar",
+    "email": "pooja.kumar@example.com",
+    "contact": "+918019598672",
+    "gstin": null,
+    "notes": {},
+    "created_at": 1780588166
+  },
+  "merchant_data": {
+    "shipping": null,
+    "delivery": null,
+    "authentication": {
+      "method": "None",
+      "verified": false,
+      "device_known": false,
+      "ip_country": "RU",
+      "ip_address": "185.220.101.5",
+      "device_fingerprint": "new-untrusted-proxy",
+      "previous_transactions": 0
+    },
+    "communications": [],
+    "refunds": []
+  },
+  "expected": {
+    "recommendation": "accept_loss",
+    "case_strength": "low",
+    "confidence": "high"
+  }
+}

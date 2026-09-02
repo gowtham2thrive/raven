@@ -1,0 +1,21 @@
+services:
+  raven:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - RAVEN_GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      - RAVEN_DATABASE_URL=sqlite:///./raven.db
+      - RAVEN_ENVIRONMENT=production
+      - RAVEN_DEBUG=false
+    volumes:
+      - raven-data:/app/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  raven-data:

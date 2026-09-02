@@ -1,0 +1,119 @@
+{
+  "case_id": "CASE-00051",
+  "profile": "UNAUTHORIZED_STRONG_AUTH",
+  "razorpay_dispute": {
+    "id": "disp_unauth_strong_51",
+    "entity": "dispute",
+    "payment_id": "pay_unauth_strong_51",
+    "amount": 1250000,
+    "currency": "INR",
+    "amount_deducted": 0,
+    "reason_code": "unauthorized_transaction",
+    "reason_description": "I did not authorize this payment. My card was used without my knowledge.",
+    "respond_by": 1787832779,
+    "status": "open",
+    "phase": "chargeback",
+    "created_at": 1787573579,
+    "evidence": {
+      "amount": 1250000,
+      "summary": null,
+      "shipping_proof": [],
+      "billing_proof": [],
+      "cancellation_proof": [],
+      "customer_communication": [],
+      "proof_of_service": [],
+      "explanation_letter": [],
+      "refund_confirmation": [],
+      "access_activity_log": [],
+      "submitted_at": null
+    }
+  },
+  "razorpay_payment": {
+    "id": "pay_unauth_strong_51",
+    "entity": "payment",
+    "amount": 1250000,
+    "currency": "INR",
+    "status": "captured",
+    "order_id": "order_unauth_strong_51",
+    "method": "card",
+    "description": "Premium Subscription",
+    "card_id": "card_UnAuthStrong51",
+    "card": {
+      "id": "card_UnAuthStrong51",
+      "name": "Priya Sharma",
+      "network": "Mastercard",
+      "last4": "8832",
+      "type": "credit",
+      "issuer": "ICICI",
+      "international": false,
+      "emi": null
+    },
+    "bank": null,
+    "wallet": null,
+    "vpa": null,
+    "email": "priya.sharma@example.com",
+    "contact": "+919001234567",
+    "customer_id": "cust_unauth_strong_51",
+    "captured": true,
+    "international": false,
+    "amount_refunded": 0,
+    "refund_status": null,
+    "created_at": 1787141639,
+    "notes": {}
+  },
+  "razorpay_order": {
+    "id": "order_unauth_strong_51",
+    "entity": "order",
+    "amount": 1250000,
+    "amount_paid": 1250000,
+    "amount_due": 0,
+    "currency": "INR",
+    "receipt": "SUB-5100",
+    "status": "paid",
+    "notes": {
+      "item": "Annual Premium Subscription",
+      "quantity": "1"
+    },
+    "created_at": 1787141579
+  },
+  "razorpay_customer": {
+    "id": "cust_unauth_strong_51",
+    "entity": "customer",
+    "name": "Priya Sharma",
+    "email": "priya.sharma@example.com",
+    "contact": "+919001234567",
+    "gstin": null,
+    "notes": {},
+    "created_at": 1780056779
+  },
+  "merchant_data": {
+    "shipping": null,
+    "delivery": null,
+    "authentication": {
+      "method": "3DS_v2",
+      "verified": true,
+      "device_known": true,
+      "ip_country": "IN",
+      "ip_address": "103.21.45.78",
+      "device_fingerprint": "d8f9a2e1-known-device",
+      "previous_transactions": 12
+    },
+    "communications": [
+      {
+        "type": "email",
+        "direction": "outbound",
+        "sent_at": "2026-08-18T10:00:00+05:30",
+        "subject": "Welcome to Premium!",
+        "content": "Thank you for subscribing to our Premium plan."
+      }
+    ],
+    "refunds": []
+  },
+  "expected": {
+    "recommendation": "contest",
+    "case_strength": "high",
+    "confidence": "high",
+    "contradictions": 0,
+    "notes": "Strong 3DS auth + known device + same IP region = strong defense for unauthorized claim"
+  }
+}

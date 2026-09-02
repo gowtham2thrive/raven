@@ -1,0 +1,121 @@
+{
+  "case_id": "CASE-00056",
+  "profile": "COMPOUND_CLAIM",
+  "razorpay_dispute": {
+    "id": "disp_compound_56",
+    "entity": "dispute",
+    "payment_id": "pay_compound_56",
+    "amount": 899900,
+    "currency": "INR",
+    "amount_deducted": 0,
+    "reason_code": "general",
+    "reason_description": "I did not authorize this transaction AND the product I supposedly ordered was never delivered to my address.",
+    "respond_by": 1787832779,
+    "status": "open",
+    "phase": "chargeback",
+    "created_at": 1787573579,
+    "evidence": {
+      "amount": 899900,
+      "summary": null,
+      "shipping_proof": [],
+      "billing_proof": [],
+      "cancellation_proof": [],
+      "customer_communication": [],
+      "proof_of_service": [],
+      "explanation_letter": [],
+      "refund_confirmation": [],
+      "access_activity_log": [],
+      "submitted_at": null
+    }
+  },
+  "razorpay_payment": {
+    "id": "pay_compound_56",
+    "entity": "payment",
+    "amount": 899900,
+    "currency": "INR",
+    "status": "captured",
+    "order_id": "order_compound_56",
+    "method": "card",
+    "description": "Order #6677",
+    "card_id": "card_Compound56",
+    "card": {
+      "id": "card_Compound56",
+      "name": "Amit Gupta",
+      "network": "Visa",
+      "last4": "3311",
+      "type": "credit",
+      "issuer": "HDFC",
+      "international": false,
+      "emi": null
+    },
+    "bank": null,
+    "wallet": null,
+    "vpa": null,
+    "email": "amit.g@example.com",
+    "contact": "+919988776655",
+    "customer_id": "cust_compound_56",
+    "captured": true,
+    "international": false,
+    "amount_refunded": 0,
+    "refund_status": null,
+    "created_at": 1787141639,
+    "notes": {}
+  },
+  "razorpay_order": {
+    "id": "order_compound_56",
+    "entity": "order",
+    "amount": 899900,
+    "amount_paid": 899900,
+    "amount_due": 0,
+    "currency": "INR",
+    "receipt": "ORD-6677",
+    "status": "paid",
+    "notes": {
+      "item": "Gaming Laptop - Asus ROG",
+      "quantity": "1"
+    },
+    "created_at": 1787141579
+  },
+  "razorpay_customer": {
+    "id": "cust_compound_56",
+    "entity": "customer",
+    "name": "Amit Gupta",
+    "email": "amit.g@example.com",
+    "contact": "+919988776655",
+    "gstin": null,
+    "notes": {},
+    "created_at": 1780056779
+  },
+  "merchant_data": {
+    "shipping": {
+      "carrier": "FedEx India",
+      "tracking_id": "FDX112233",
+      "shipped_at": "2026-08-19T09:00:00+00:00",
+      "origin_city": "Chennai",
+      "destination_city": "Mumbai",
+      "status": "delivered"
+    },
+    "delivery": {
+      "delivered_at": "2026-08-21T15:00:00+00:00",
+      "signed_by": "A. Gupta",
+      "delivery_address": "78 Andheri West, Mumbai",
+      "proof_type": "signature",
+      "photo_proof": true
+    },
+    "authentication": {
+      "method": "3DS",
+      "verified": true,
+      "device_known": true,
+      "ip_country": "IN"
+    },
+    "communications": [],
+    "refunds": []
+  },
+  "expected": {
+    "recommendation": "contest",
+    "case_strength": "high",
+    "confidence": "high",
+    "contradictions": 0,
+    "notes": "Compound claim (unauthorized + not received) — both auth and delivery are strong. Agent should classify BOTH auth and delivery as critical."
+  }
+}

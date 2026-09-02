@@ -1,0 +1,121 @@
+{
+  "case_id": "CASE-00057",
+  "profile": "UNKNOWN_REASON",
+  "razorpay_dispute": {
+    "id": "disp_unknown_57",
+    "entity": "dispute",
+    "payment_id": "pay_unknown_57",
+    "amount": 199900,
+    "currency": "INR",
+    "amount_deducted": 0,
+    "reason_code": "processing_error_4837",
+    "reason_description": "",
+    "respond_by": 1787832779,
+    "status": "open",
+    "phase": "chargeback",
+    "created_at": 1787573579,
+    "evidence": {
+      "amount": 199900,
+      "summary": null,
+      "shipping_proof": [],
+      "billing_proof": [],
+      "cancellation_proof": [],
+      "customer_communication": [],
+      "proof_of_service": [],
+      "explanation_letter": [],
+      "refund_confirmation": [],
+      "access_activity_log": [],
+      "submitted_at": null
+    }
+  },
+  "razorpay_payment": {
+    "id": "pay_unknown_57",
+    "entity": "payment",
+    "amount": 199900,
+    "currency": "INR",
+    "status": "captured",
+    "order_id": "order_unknown_57",
+    "method": "card",
+    "description": "Order #1100",
+    "card_id": "card_Unknown57",
+    "card": {
+      "id": "card_Unknown57",
+      "name": "Deepa Nair",
+      "network": "RuPay",
+      "last4": "9900",
+      "type": "debit",
+      "issuer": "Canara",
+      "international": false,
+      "emi": null
+    },
+    "bank": null,
+    "wallet": null,
+    "vpa": null,
+    "email": "deepa.n@example.com",
+    "contact": "+917766554433",
+    "customer_id": "cust_unknown_57",
+    "captured": true,
+    "international": false,
+    "amount_refunded": 0,
+    "refund_status": null,
+    "created_at": 1787141639,
+    "notes": {}
+  },
+  "razorpay_order": {
+    "id": "order_unknown_57",
+    "entity": "order",
+    "amount": 199900,
+    "amount_paid": 199900,
+    "amount_due": 0,
+    "currency": "INR",
+    "receipt": "ORD-1100",
+    "status": "paid",
+    "notes": {
+      "item": "Yoga Mat + Accessories Kit",
+      "quantity": "1"
+    },
+    "created_at": 1787141579
+  },
+  "razorpay_customer": {
+    "id": "cust_unknown_57",
+    "entity": "customer",
+    "name": "Deepa Nair",
+    "email": "deepa.n@example.com",
+    "contact": "+917766554433",
+    "gstin": null,
+    "notes": {},
+    "created_at": 1780056779
+  },
+  "merchant_data": {
+    "shipping": {
+      "carrier": "India Post",
+      "tracking_id": "IP556677",
+      "shipped_at": "2026-08-20T06:00:00+00:00",
+      "origin_city": "Kochi",
+      "destination_city": "Thiruvananthapuram",
+      "status": "delivered"
+    },
+    "delivery": {
+      "delivered_at": "2026-08-23T10:00:00+00:00",
+      "signed_by": null,
+      "delivery_address": "15 Kowdiar, Thiruvananthapuram",
+      "proof_type": "photo",
+      "photo_proof": true
+    },
+    "authentication": {
+      "method": "OTP",
+      "verified": true,
+      "device_known": true,
+      "ip_country": "IN"
+    },
+    "communications": [],
+    "refunds": []
+  },
+  "expected": {
+    "recommendation": "human_review",
+    "case_strength": "medium",
+    "confidence": "low",
+    "contradictions": 0,
+    "notes": "Unknown reason code with empty description — agent cannot determine what to prioritize. Should default to equal weights and flag for human review due to low confidence."
+  }
+}

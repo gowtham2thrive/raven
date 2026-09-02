@@ -1,0 +1,121 @@
+{
+  "case_id": "CASE-00019",
+  "profile": "B_WEAK",
+  "razorpay_dispute": {
+    "id": "disp_c70a96c9Ov0019",
+    "entity": "dispute",
+    "payment_id": "pay_c70a96c9Hf0019",
+    "amount": 849900,
+    "currency": "INR",
+    "amount_deducted": 0,
+    "reason_code": "product_not_received",
+    "reason_description": "Customer claims the product was not received.",
+    "respond_by": 1788273087,
+    "status": "open",
+    "phase": "chargeback",
+    "created_at": 1788013887,
+    "evidence": {
+      "amount": 849900,
+      "summary": null,
+      "shipping_proof": [],
+      "billing_proof": [],
+      "cancellation_proof": [],
+      "customer_communication": [],
+      "proof_of_service": [],
+      "explanation_letter": [],
+      "refund_confirmation": [],
+      "access_activity_log": [],
+      "submitted_at": null
+    }
+  },
+  "razorpay_payment": {
+    "id": "pay_c70a96c9Hf0019",
+    "entity": "payment",
+    "amount": 849900,
+    "currency": "INR",
+    "status": "captured",
+    "order_id": "order_c70a96c9Jb0019",
+    "method": "card",
+    "description": "Order #1234",
+    "card_id": "card_DZBt9VnTASbv3f",
+    "card": {
+      "id": "card_DZBt9VnTASbv3f",
+      "name": "Arjun Mehta",
+      "network": "Visa",
+      "last4": "4242",
+      "type": "credit",
+      "issuer": "HDFC",
+      "international": false,
+      "emi": null
+    },
+    "bank": null,
+    "wallet": null,
+    "vpa": null,
+    "email": "divya.nair@example.com",
+    "contact": "+917911726761",
+    "customer_id": "cust_c70a96c9Aa0019",
+    "captured": true,
+    "international": false,
+    "amount_refunded": 0,
+    "refund_status": null,
+    "created_at": 1787581947,
+    "notes": {}
+  },
+  "razorpay_order": {
+    "id": "order_c70a96c9Jb0019",
+    "entity": "order",
+    "amount": 849900,
+    "amount_paid": 849900,
+    "amount_due": 0,
+    "currency": "INR",
+    "receipt": "ORD-0019",
+    "status": "paid",
+    "notes": {
+      "item": "Wireless Headphones (Sony WH-1000XM5)",
+      "quantity": "1"
+    },
+    "created_at": 1787581887
+  },
+  "razorpay_customer": {
+    "id": "cust_c70a96c9Aa0019",
+    "entity": "customer",
+    "name": "Divya Nair",
+    "email": "divya.nair@example.com",
+    "contact": "+917911726761",
+    "gstin": null,
+    "notes": {},
+    "created_at": 1780583487
+  },
+  "merchant_data": {
+    "shipping": {
+      "carrier": "Delhivery",
+      "tracking_id": "DEL152875",
+      "shipped_at": "2026-08-25T14:31:27.657541+00:00",
+      "status": "delivered"
+    },
+    "delivery": {
+      "delivered_at": "2026-08-27T14:31:27.657541+00:00",
+      "signed_by": null,
+      "proof_type": "left_at_door",
+      "photo_proof": false
+    },
+    "authentication": {
+      "method": "OTP",
+      "verified": true,
+      "device_known": false,
+      "ip_country": "IN"
+    },
+    "communications": [],
+    "refunds": []
+  },
+  "expected": {
+    "recommendation": "human_review",
+    "case_strength": "medium",
+    "confidence": "medium",
+    "contradictions": 0,
+    "missing_evidence": [
+      "delivery_signature"
+    ],
+    "auto_submit_eligible": false
+  }
+}

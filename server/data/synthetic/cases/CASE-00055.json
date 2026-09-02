@@ -1,0 +1,116 @@
+{
+  "case_id": "CASE-00055",
+  "profile": "SERVICE_NOT_RENDERED",
+  "razorpay_dispute": {
+    "id": "disp_service_55",
+    "entity": "dispute",
+    "payment_id": "pay_service_55",
+    "amount": 499900,
+    "currency": "INR",
+    "amount_deducted": 0,
+    "reason_code": "service_not_rendered",
+    "reason_description": "I paid for a 6-month online course subscription but was never given access to the platform.",
+    "respond_by": 1787832779,
+    "status": "open",
+    "phase": "chargeback",
+    "created_at": 1787573579,
+    "evidence": {
+      "amount": 499900,
+      "summary": null,
+      "shipping_proof": [],
+      "billing_proof": [],
+      "cancellation_proof": [],
+      "customer_communication": [],
+      "proof_of_service": [],
+      "explanation_letter": [],
+      "refund_confirmation": [],
+      "access_activity_log": [],
+      "submitted_at": null
+    }
+  },
+  "razorpay_payment": {
+    "id": "pay_service_55",
+    "entity": "payment",
+    "amount": 499900,
+    "currency": "INR",
+    "status": "captured",
+    "order_id": "order_service_55",
+    "method": "card",
+    "description": "Course: Advanced Data Science",
+    "card_id": "card_Service55",
+    "card": {
+      "id": "card_Service55",
+      "name": "Sneha Joshi",
+      "network": "Mastercard",
+      "last4": "7744",
+      "type": "credit",
+      "issuer": "Kotak",
+      "international": false,
+      "emi": null
+    },
+    "bank": null,
+    "wallet": null,
+    "vpa": null,
+    "email": "sneha.j@example.com",
+    "contact": "+919876554321",
+    "customer_id": "cust_service_55",
+    "captured": true,
+    "international": false,
+    "amount_refunded": 0,
+    "refund_status": null,
+    "created_at": 1787141639,
+    "notes": {}
+  },
+  "razorpay_order": {
+    "id": "order_service_55",
+    "entity": "order",
+    "amount": 499900,
+    "amount_paid": 499900,
+    "amount_due": 0,
+    "currency": "INR",
+    "receipt": "SUB-5500",
+    "status": "paid",
+    "notes": {
+      "item": "Advanced Data Science - 6 Month Access",
+      "quantity": "1"
+    },
+    "created_at": 1787141579
+  },
+  "razorpay_customer": {
+    "id": "cust_service_55",
+    "entity": "customer",
+    "name": "Sneha Joshi",
+    "email": "sneha.j@example.com",
+    "contact": "+919876554321",
+    "gstin": null,
+    "notes": {},
+    "created_at": 1780056779
+  },
+  "merchant_data": {
+    "shipping": null,
+    "delivery": null,
+    "authentication": {
+      "method": "OTP",
+      "verified": true,
+      "device_known": true,
+      "ip_country": "IN"
+    },
+    "communications": [
+      {
+        "type": "email",
+        "direction": "outbound",
+        "sent_at": "2026-08-18T10:05:00+05:30",
+        "subject": "Your course access credentials",
+        "content": "Welcome! Your login credentials for Advanced Data Science have been sent to sneha.j@example.com. Username: sneha_ds_2026"
+      }
+    ],
+    "refunds": []
+  },
+  "expected": {
+    "recommendation": "human_review",
+    "case_strength": "medium",
+    "confidence": "medium",
+    "contradictions": 0,
+    "notes": "Digital service — no shipping/delivery. Agent should classify service logs as critical but they are MISSING (stub). Comms show credentials were sent. Needs human review because we cannot prove platform usage."
+  }
+}

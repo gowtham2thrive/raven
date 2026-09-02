@@ -1,0 +1,94 @@
+{
+  "case_id": "SIM-E577DA",
+  "profile": "UNAUTHORIZED_STRONG_AUTH",
+  "razorpay_dispute": {
+    "id": "disp_e577da",
+    "entity": "dispute",
+    "payment_id": "pay_e577da",
+    "amount": 1499900,
+    "currency": "INR",
+    "amount_deducted": 0,
+    "reason_code": "unauthorized_transaction",
+    "reason_description": "I did not authorize this payment. Card was charged fraudulently.",
+    "respond_by": 1788623366,
+    "status": "open",
+    "phase": "chargeback",
+    "created_at": 1788277766
+  },
+  "razorpay_payment": {
+    "id": "pay_e577da",
+    "entity": "payment",
+    "amount": 1499900,
+    "currency": "INR",
+    "status": "captured",
+    "order_id": "order_e577da",
+    "method": "card",
+    "description": "Order #1234",
+    "card_id": "card_DZBt9VnTASbv3f",
+    "card": {
+      "id": "card_DZBt9VnTASbv3f",
+      "name": "Varun Saxena",
+      "network": "Visa",
+      "last4": "4242",
+      "type": "credit",
+      "issuer": "HDFC",
+      "international": false,
+      "emi": null
+    },
+    "bank": null,
+    "wallet": null,
+    "vpa": null,
+    "email": "varun.saxena@example.com",
+    "contact": "+919526146695",
+    "customer_id": "cust_e577da",
+    "captured": true,
+    "international": false,
+    "amount_refunded": 0,
+    "refund_status": null,
+    "created_at": 1787845826,
+    "notes": {}
+  },
+  "razorpay_order": {
+    "id": "order_e577da",
+    "entity": "order",
+    "amount": 1499900,
+    "amount_paid": 1499900,
+    "currency": "INR",
+    "receipt": "SUB-77DA",
+    "status": "paid",
+    "notes": {
+      "item": "Annual Enterprise SaaS License"
+    },
+    "created_at": 1787845766
+  },
+  "razorpay_customer": {
+    "id": "cust_e577da",
+    "entity": "customer",
+    "name": "Varun Saxena",
+    "email": "varun.saxena@example.com",
+    "contact": "+919526146695",
+    "gstin": null,
+    "notes": {},
+    "created_at": 1780588166
+  },
+  "merchant_data": {
+    "shipping": null,
+    "delivery": null,
+    "authentication": {
+      "method": "3DS_v2",
+      "verified": true,
+      "device_known": true,
+      "ip_country": "IN",
+      "ip_address": "103.21.45.78",
+      "device_fingerprint": "d8f9a2e1-known-device",
+      "previous_transactions": 12
+    },
+    "communications": [],
+    "refunds": []
+  },
+  "expected": {
+    "recommendation": "contest",
+    "case_strength": "high",
+    "confidence": "high"
+  }
+}

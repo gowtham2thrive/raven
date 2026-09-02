@@ -1,0 +1,122 @@
+{
+  "case_id": "CASE-00002",
+  "profile": "A_STRONG",
+  "razorpay_dispute": {
+    "id": "disp_4ae6d479Ov0002",
+    "entity": "dispute",
+    "payment_id": "pay_4ae6d479Hf0002",
+    "amount": 849900,
+    "currency": "INR",
+    "amount_deducted": 0,
+    "reason_code": "product_not_received",
+    "reason_description": "Customer claims the product was not received.",
+    "respond_by": 1788618687,
+    "status": "open",
+    "phase": "chargeback",
+    "created_at": 1788359487,
+    "evidence": {
+      "amount": 849900,
+      "summary": null,
+      "shipping_proof": [],
+      "billing_proof": [],
+      "cancellation_proof": [],
+      "customer_communication": [],
+      "proof_of_service": [],
+      "explanation_letter": [],
+      "refund_confirmation": [],
+      "access_activity_log": [],
+      "submitted_at": null
+    }
+  },
+  "razorpay_payment": {
+    "id": "pay_4ae6d479Hf0002",
+    "entity": "payment",
+    "amount": 849900,
+    "currency": "INR",
+    "status": "captured",
+    "order_id": "order_4ae6d479Jb0002",
+    "method": "card",
+    "description": "Order #1234",
+    "card_id": "card_DZBt9VnTASbv3f",
+    "card": {
+      "id": "card_DZBt9VnTASbv3f",
+      "name": "Arjun Mehta",
+      "network": "Visa",
+      "last4": "4242",
+      "type": "credit",
+      "issuer": "HDFC",
+      "international": false,
+      "emi": null
+    },
+    "bank": null,
+    "wallet": null,
+    "vpa": null,
+    "email": "suresh.kumar@example.com",
+    "contact": "+918345887104",
+    "customer_id": "cust_4ae6d479Aa0002",
+    "captured": true,
+    "international": false,
+    "amount_refunded": 0,
+    "refund_status": null,
+    "created_at": 1787927547,
+    "notes": {}
+  },
+  "razorpay_order": {
+    "id": "order_4ae6d479Jb0002",
+    "entity": "order",
+    "amount": 849900,
+    "amount_paid": 849900,
+    "amount_due": 0,
+    "currency": "INR",
+    "receipt": "ORD-0002",
+    "status": "paid",
+    "notes": {
+      "item": "Wireless Headphones (Sony WH-1000XM5)",
+      "quantity": "1"
+    },
+    "created_at": 1787927487
+  },
+  "razorpay_customer": {
+    "id": "cust_4ae6d479Aa0002",
+    "entity": "customer",
+    "name": "Suresh Kumar",
+    "email": "suresh.kumar@example.com",
+    "contact": "+918345887104",
+    "gstin": null,
+    "notes": {},
+    "created_at": 1780583487
+  },
+  "merchant_data": {
+    "shipping": {
+      "carrier": "BlueDart",
+      "tracking_id": "BLU332021",
+      "shipped_at": "2026-08-29T14:31:27.657197+00:00",
+      "origin_city": "Mumbai",
+      "destination_city": "Mumbai",
+      "status": "delivered"
+    },
+    "delivery": {
+      "delivered_at": "2026-08-31T14:31:27.657197+00:00",
+      "signed_by": "S. Kumar",
+      "delivery_address": "Flat 402, Mumbai",
+      "proof_type": "signature",
+      "photo_proof": true
+    },
+    "authentication": {
+      "method": "OTP",
+      "verified": true,
+      "device_known": true,
+      "ip_country": "IN"
+    },
+    "communications": [],
+    "refunds": []
+  },
+  "expected": {
+    "recommendation": "contest",
+    "case_strength": "high",
+    "confidence": "high",
+    "contradictions": 0,
+    "missing_evidence": [],
+    "auto_submit_eligible": true
+  }
+}

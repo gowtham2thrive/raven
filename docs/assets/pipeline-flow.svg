@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 64" width="960" height="64" fill="none">
+  <defs>
+    <!-- Brand Font Import -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&amp;display=swap');
+      .font-step-title { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 12px; font-weight: 700; fill: #ffffff; }
+      .font-step-sub { font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace; font-size: 9px; font-weight: 500; }
+    </style>
+
+    <!-- Card Background -->
+    <linearGradient id="step-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+
+    <!-- Accent Gradients -->
+    <linearGradient id="grad-amber" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
+    <linearGradient id="grad-sky" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="grad-blue" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1d4ed8"/><stop offset="100%" stop-color="#3b82f6"/></linearGradient>
+    <linearGradient id="grad-indigo" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#4338ca"/><stop offset="100%" stop-color="#818cf8"/></linearGradient>
+    <linearGradient id="grad-pink" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#db2777"/><stop offset="100%" stop-color="#f472b6"/></linearGradient>
+    <linearGradient id="grad-purple" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+    <linearGradient id="grad-cyan" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0891b2"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient>
+    <linearGradient id="grad-green" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+
+    <!-- Arrow Marker -->
+    <marker id="pipe-arrow" viewBox="0 0 10 7" refX="9" refY="3.5" markerWidth="6" markerHeight="4.5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 3.5 L 0 7 z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+
+  <!-- ==================================================== -->
+  <!-- PIPELINE STEPS (8 Seamless Themed Cards)             -->
+  <!-- ==================================================== -->
+
+  <!-- Step 1: Webhook -->
+  <g transform="translate(16, 6)">
+    <rect width="96" height="52" rx="8" fill="url(#step-bg)" stroke="#f59e0b" stroke-width="1.5"/>
+    <rect width="96" height="3" rx="1.5" fill="url(#grad-amber)"/>
+    <text class="font-step-title" x="48" y="27" text-anchor="middle">Webhook</text>
+    <text class="font-step-sub" x="48" y="42" text-anchor="middle" fill="#fbbf24">rzp.dispute</text>
+  </g>
+  <line x1="114" y1="32" x2="130" y2="32" stroke="#38bdf8" stroke-width="1.5" marker-end="url(#pipe-arrow)"/>
+
+  <!-- Step 2: Gather -->
+  <g transform="translate(134, 6)">
+    <rect width="88" height="52" rx="8" fill="url(#step-bg)" stroke="#0284c7" stroke-width="1.5"/>
+    <rect width="88" height="3" rx="1.5" fill="url(#grad-sky)"/>
+    <text class="font-step-title" x="44" y="27" text-anchor="middle">Gather</text>
+    <text class="font-step-sub" x="44" y="42" text-anchor="middle" fill="#38bdf8">11 Sources</text>
+  </g>
+  <line x1="224" y1="32" x2="240" y2="32" stroke="#38bdf8" stroke-width="1.5" marker-end="url(#pipe-arrow)"/>
+
+  <!-- Step 3: Normalize -->
+  <g transform="translate(244, 6)">
+    <rect width="104" height="52" rx="8" fill="url(#step-bg)" stroke="#2563eb" stroke-width="1.5"/>
+    <rect width="104" height="3" rx="1.5" fill="url(#grad-blue)"/>
+    <text class="font-step-title" x="52" y="27" text-anchor="middle">Normalize</text>
+    <text class="font-step-sub" x="52" y="42" text-anchor="middle" fill="#60a5fa">Canonical</text>
+  </g>
+  <line x1="350" y1="32" x2="366" y2="32" stroke="#38bdf8" stroke-width="1.5" marker-end="url(#pipe-arrow)"/>
+
+  <!-- Step 4: Timeline -->
+  <g transform="translate(370, 6)">
+    <rect width="94" height="52" rx="8" fill="url(#step-bg)" stroke="#6366f1" stroke-width="1.5"/>
+    <rect width="94" height="3" rx="1.5" fill="url(#grad-indigo)"/>
+    <text class="font-step-title" x="47" y="27" text-anchor="middle">Timeline</text>
+    <text class="font-step-sub" x="47" y="42" text-anchor="middle" fill="#a5b4fc">UTC + TZ</text>
+  </g>
+  <line x1="466" y1="32" x2="482" y2="32" stroke="#38bdf8" stroke-width="1.5" marker-end="url(#pipe-arrow)"/>
+
+  <!-- Step 5: Contradictions -->
+  <g transform="translate(486, 6)">
+    <rect width="126" height="52" rx="8" fill="url(#step-bg)" stroke="#ec4899" stroke-width="1.5"/>
+    <rect width="126" height="3" rx="1.5" fill="url(#grad-pink)"/>
+    <text class="font-step-title" x="63" y="27" text-anchor="middle">Contradictions</text>
+    <text class="font-step-sub" x="63" y="42" text-anchor="middle" fill="#f472b6">Conflict Audit</text>
+  </g>
+  <line x1="614" y1="32" x2="630" y2="32" stroke="#38bdf8" stroke-width="1.5" marker-end="url(#pipe-arrow)"/>
+
+  <!-- Step 6: Score -->
+  <g transform="translate(634, 6)">
+    <rect width="86" height="52" rx="8" fill="url(#step-bg)" stroke="#8b5cf6" stroke-width="1.5"/>
+    <rect width="86" height="3" rx="1.5" fill="url(#grad-purple)"/>
+    <text class="font-step-title" x="43" y="27" text-anchor="middle">Score</text>
+    <text class="font-step-sub" x="43" y="42" text-anchor="middle" fill="#c4b5fd">0.0 – 1.0</text>
+  </g>
+  <line x1="722" y1="32" x2="738" y2="32" stroke="#38bdf8" stroke-width="1.5" marker-end="url(#pipe-arrow)"/>
+
+  <!-- Step 7: Route -->
+  <g transform="translate(742, 6)">
+    <rect width="86" height="52" rx="8" fill="url(#step-bg)" stroke="#06b6d4" stroke-width="1.5"/>
+    <rect width="86" height="3" rx="1.5" fill="url(#grad-cyan)"/>
+    <text class="font-step-title" x="43" y="27" text-anchor="middle">Route</text>
+    <text class="font-step-sub" x="43" y="42" text-anchor="middle" fill="#67e8f9">Auto / Review</text>
+  </g>
+  <line x1="830" y1="32" x2="846" y2="32" stroke="#38bdf8" stroke-width="1.5" marker-end="url(#pipe-arrow)"/>
+
+  <!-- Step 8: Review -->
+  <g transform="translate(850, 6)">
+    <rect width="94" height="52" rx="8" fill="url(#step-bg)" stroke="#10b981" stroke-width="1.5"/>
+    <rect width="94" height="3" rx="1.5" fill="url(#grad-green)"/>
+    <text class="font-step-title" x="47" y="27" text-anchor="middle">Review</text>
+    <text class="font-step-sub" x="47" y="42" text-anchor="middle" fill="#34d399">Resolution</text>
+  </g>
+</svg>
