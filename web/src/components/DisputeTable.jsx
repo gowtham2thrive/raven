@@ -68,8 +68,7 @@ export function DisputeTable({
       all: cases.length,
       needs_review: cases.filter(c => c.status === 'under_review').length,
       auto_contest: cases.filter(c => 
-        (c.status === 'assessed' || c.status === 'draft_ready' || c.status === 'approved') && 
-        c.recommendation === 'contest'
+        c.status === 'under_review' && c.recommendation === 'contest'
       ).length,
       unprocessed: cases.filter(c => c.status === 'created').length,
       urgent: cases.filter(c => formatDeadline(c.respond_by).type === 'urgent').length,
@@ -112,7 +111,7 @@ export function DisputeTable({
       // Filter matching — aligned with tabCounts logic
       if (filter === 'all') return true;
       if (filter === 'needs_review') return c.status === 'under_review';
-      if (filter === 'auto_contest') return (c.status === 'assessed' || c.status === 'draft_ready' || c.status === 'approved') && c.recommendation === 'contest';
+      if (filter === 'auto_contest') return c.status === 'under_review' && c.recommendation === 'contest';
       if (filter === 'unprocessed') return c.status === 'created';
       if (filter === 'urgent') return formatDeadline(c.respond_by).type === 'urgent';
       return true;

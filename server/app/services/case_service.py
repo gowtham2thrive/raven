@@ -246,16 +246,12 @@ class CaseService:
 
         # Update status based on assessment
         # Per AGENTS.md Section 10: "Humans authorize consequential actions."
-        # Both contesting and accepting loss are consequential — route all
-        # non-auto-submit cases to human review.
+        # All investigated cases route to human review. The UI provides
+        # a single "Approve" action that chains review + submit in one click.
+        # The auto_submit_eligible flag is preserved in the assessment data
+        # for display (e.g., showing "Contest Ready" badge).
         if assessment:
-            if assessment.auto_submit_eligible:
-                # Per AGENTS.md §10: "Execute: only with explicit, scoped
-                # human authorization." Auto-eligible cases are pre-approved
-                # but still require human confirmation before gateway submission.
-                case.status = "approved"
-            else:
-                case.status = "under_review"
+            case.status = "under_review"
         else:
             case.status = "evidence_gathered"
 
