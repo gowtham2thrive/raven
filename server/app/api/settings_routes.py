@@ -42,7 +42,7 @@ def _mask_credential(value: str) -> str | None:
     prefix = value[:CREDENTIAL_MASK_VISIBLE_CHARS]
     suffix = value[-CREDENTIAL_MASK_SUFFIX_CHARS:]
     masked_length = len(value) - CREDENTIAL_MASK_VISIBLE_CHARS - CREDENTIAL_MASK_SUFFIX_CHARS
-    return f"{prefix}{'•' * min(masked_length, 16)}{suffix}"
+    return f"{prefix}{'*' * min(masked_length, 8)}{suffix}"
 
 
 @settings_router.get("/credentials/status")
