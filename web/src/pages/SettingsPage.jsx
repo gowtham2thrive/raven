@@ -33,7 +33,8 @@ export function SettingsPage() {
   const [pingStatus, setPingStatus] = useState(null);
   const [isPinging, setIsPinging] = useState(false);
   const [copiedWebhook, setCopiedWebhook] = useState(false);
-  const webhookUrl = 'http://127.0.0.1:8000/webhooks/razorpay';
+  const apiBase = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000';
+  const webhookUrl = `${apiBase}/webhooks/razorpay`;
 
   // ── Credential State ───────────────────────────────────────
   const [credentials, setCredentials] = useState(null);

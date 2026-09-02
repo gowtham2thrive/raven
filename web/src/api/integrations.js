@@ -2,7 +2,7 @@
  * Integration API Client — All fetch calls for the Integrations Hub.
  */
 
-const API_BASE = 'http://localhost:8000/integrations';
+const API_BASE = `${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/integrations`;
 
 /**
  * List all integrations with optional filters.
