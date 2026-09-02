@@ -728,15 +728,21 @@ async def stream_investigation(
     async def event_generator():
         try:
             async for event in agent.investigate_streaming(case_id, dispute, model=model):
+                # Skip agent's done events — we send our own after DB commit
+                if event.type.value == "done":
+                    continue
                 data = json.dumps(event.data, default=str)
                 yield f"event: {event.type.value}\ndata: {data}\n\n"
 
-            # Persist results via the DI-provided service (runs the deterministic
-            # pipeline once to save to DB). This is a single run, not a duplicate.
+            # Persist results via the deterministic pipeline BEFORE sending done.
+            # The frontend reloads case data on 'done', so DB must be committed first.
             try:
                 service.investigate(case_id, db)
             except Exception as save_err:
                 logger.debug(f"DB sync after stream for {case_id}: {save_err}")
+
+            # Send final done event AFTER DB commit so frontend sees fresh data
+            yield f"event: done\ndata: {json.dumps({'case_id': case_id})}\n\n"
         except Exception as e:
             error_data = json.dumps({"message": str(e)})
             yield f"event: error\ndata: {error_data}\n\n"
