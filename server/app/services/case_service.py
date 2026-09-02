@@ -302,13 +302,14 @@ class CaseService:
         6. Dispute amount <= require_human_review_above (or threshold disabled)
         """
         from app.db.models import SystemSettingModel
+        from app.api.settings_routes import DEFAULT_GUARDRAILS
 
-        # Load guardrail config from DB
+        # Load guardrail config from DB, falling back to defaults
         row = db.query(SystemSettingModel).filter_by(key="guardrails").first()
-        if not row or not row.value:
-            return False  # No guardrails configured — require human review
-
-        guardrails = row.value
+        if row and row.value:
+            guardrails = {**DEFAULT_GUARDRAILS, **row.value}
+        else:
+            guardrails = {**DEFAULT_GUARDRAILS}
 
         # 1. Auto-contest must be enabled
         if not guardrails.get("auto_contest_enabled", False):

@@ -165,7 +165,7 @@ async def validate_credentials():
 GUARDRAILS_KEY = "guardrails"
 
 DEFAULT_GUARDRAILS: dict[str, Any] = {
-    "auto_contest_enabled": False,
+    "auto_contest_enabled": True,
     "min_confidence_threshold": 80,
     "max_dispute_amount": 5000000,
     "require_human_review_above": 2500000,
@@ -180,7 +180,7 @@ class GuardrailsUpdate(BaseModel):
         require_human_review_above = None → threshold disabled
     """
     auto_contest_enabled: bool = Field(
-        default=False,
+        default=True,
         description="Whether auto-contest recommendations are enabled.",
     )
     min_confidence_threshold: int = Field(
